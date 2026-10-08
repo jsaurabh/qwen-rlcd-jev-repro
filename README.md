@@ -16,6 +16,10 @@ The common idea is to turn a decoder model into a decision model: serialize stat
 
 This is an independent reconstruction from public work. It does **not** reproduce TypeSafe's undisclosed Jev architecture, weights, or training data.
 
+## Talk deck
+
+The accompanying 21-slide technical overview is available at [`slides/jev_decision_models_balanced_technical_talk_v8.pptx`](slides/jev_decision_models_balanced_technical_talk_v8.pptx). It covers the Jev execution model, open architecture families, training and calibration, and the public benchmark results summarized below.
+
 ## Start with the MLX recipe
 
 On an Apple-Silicon Mac with Python 3.11:
