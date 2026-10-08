@@ -1,0 +1,3300 @@
+{
+  "protocol": "Same frozen 128 banking cases used for our model, public AutoJev, and Jev",
+  "repo": "perplexity-ai/pplx-decider-v1.1-27b",
+  "checkpoint_config": {
+    "step": 2446,
+    "provenance": {
+      "run": "run",
+      "git_commit": "95c9275f28499526858a6cfe35cdb26f6545a1bf",
+      "development": "ebcedc3e726548c08da90ff569b94e4822f23312dfc3ea29b93579cfec3016c7",
+      "temperature": "e735fa4e0df3482752112bc9cdff6af9ddb7be07a0a9f2fb8dd8cf2355042bf6",
+      "reference": "6e6e958cf246b13fafd3192f33257ee9d357d30acb2388c96716cb546d7ca2a9",
+      "train": "11aa39cabe3bdea41ccc8c9ffe3f4b9c7273fbd2b4d1cf1dae71a003b32b293b",
+      "public": "6c21b241da6a4c3f7da16def367a25352366b2bed40576b12e57d4d00f353297",
+      "train.py": "33b7c1447abbfd0ed42f5610c6752b5ff7e2427ab4dd576a0b39a696581f0748",
+      "model.py": "824721da4d8f8ba1e534f3ee35081869243c4457f6b3bd0a9a91b611b2ec1076",
+      "optim.py": "68b1b30c7fce460245a613b9154b23c1fd2659af0327f9f5cfa2efe1b68ef147",
+      "evaluate.py": "f293a50320ab6573ca18bce28290f1a6914679c6f6de540644c9f09ca79dd2fd",
+      "types.py": "250ba2eea1cd9bc5501bc76ba76b2f4a1d6c692a7fb1bba4b01affff38cb81ca",
+      "events.py": "72315600ac072a73f70f7ed92ec62a79c91baacd128e6da0591549ff17b3f911",
+      "distributed.py": "d8e5bf5c0e97e29d348bc2169f283eba10d3487f5c7c102949e2f6c249c74951",
+      "loss.py": "2e4f4ae4b8aafac0247f931220b592a140bd2f5cd032dce8a517a158fbeedda3",
+      "uv.lock": "cba79e0f2caa23d14740ce0008076aadd5dd739f59a5fdf9eaaf1943fe207fc0"
+    },
+    "format_version": 1,
+    "base_model": "Qwen/Qwen3.8-27B",
+    "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+    "codes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U",
+      "V",
+      "W",
+      "X",
+      "Y",
+      "Z",
+      "AA",
+      "AB",
+      "AC",
+      "AD",
+      "AE",
+      "AF",
+      "AG",
+      "AH",
+      "AI",
+      "AJ",
+      "AK",
+      "AL",
+      "AM",
+      "AN",
+      "AO",
+      "AP",
+      "AQ",
+      "AR",
+      "AS",
+      "AT",
+      "AU",
+      "AV",
+      "AW",
+      "AX",
+      "AY",
+      "AZ",
+      "BA",
+      "BB",
+      "BC",
+      "BD",
+      "BE",
+      "BF",
+      "BG",
+      "BH",
+      "BI",
+      "BJ",
+      "BK",
+      "BL",
+      "BM",
+      "BN",
+      "BO",
+      "BP",
+      "BR",
+      "BS",
+      "BT",
+      "BU",
+      "BV",
+      "BW",
+      "BX",
+      "BY",
+      "CA",
+      "CB",
+      "CC",
+      "CD",
+      "CE",
+      "CF",
+      "CG",
+      "CH",
+      "CI",
+      "CK",
+      "CL",
+      "CM",
+      "CN",
+      "CO",
+      "CP",
+      "CR",
+      "CS",
+      "CT",
+      "CU",
+      "CV",
+      "CW",
+      "CX",
+      "CY",
+      "DA",
+      "DB",
+      "DC",
+      "DD",
+      "DE",
+      "DF",
+      "DG",
+      "DH",
+      "DI",
+      "DJ",
+      "DK",
+      "DL",
+      "DM",
+      "DN",
+      "DO",
+      "DP",
+      "DR",
+      "DS",
+      "DT",
+      "DU",
+      "DV",
+      "DW",
+      "DX",
+      "DY",
+      "EA",
+      "EB",
+      "EC",
+      "ED",
+      "EE",
+      "EF",
+      "EG",
+      "EH",
+      "EI",
+      "EK",
+      "EL",
+      "EM",
+      "EN",
+      "EO",
+      "EP",
+      "EQ",
+      "ER",
+      "ES",
+      "ET",
+      "EU",
+      "EV",
+      "EW",
+      "EX",
+      "EZ",
+      "FA",
+      "FB",
+      "FC",
+      "FD",
+      "FE",
+      "FF",
+      "FG",
+      "FH",
+      "FI",
+      "FK",
+      "FL",
+      "FM",
+      "FN",
+      "FO",
+      "FP",
+      "FR",
+      "FS",
+      "FT",
+      "FU",
+      "FW",
+      "FX",
+      "FY",
+      "GA",
+      "GB",
+      "GC",
+      "GD",
+      "GE",
+      "GF",
+      "GG",
+      "GH",
+      "GI",
+      "GL",
+      "GM",
+      "GN",
+      "GO",
+      "GP",
+      "GR",
+      "GS",
+      "GT",
+      "GU",
+      "GV",
+      "GW",
+      "GX",
+      "GY",
+      "HA",
+      "HB",
+      "HC",
+      "HD",
+      "HE",
+      "HF",
+      "HG",
+      "HH",
+      "HI",
+      "HK",
+      "HL",
+      "HM",
+      "HN",
+      "HO",
+      "HP",
+      "HQ",
+      "HR",
+      "HS",
+      "HT",
+      "HU",
+      "HV",
+      "HW",
+      "HX",
+      "HY",
+      "HZ",
+      "IA",
+      "IB",
+      "IC",
+      "ID",
+      "IE",
+      "IF",
+      "IG",
+      "IH",
+      "II",
+      "IJ",
+      "IK",
+      "IL",
+      "IM",
+      "IN",
+      "IO",
+      "IP",
+      "IQ",
+      "IR",
+      "IS",
+      "IT",
+      "IU",
+      "IV",
+      "IW",
+      "IX",
+      "IZ",
+      "JA",
+      "JB",
+      "JC",
+      "JD",
+      "JE",
+      "JI",
+      "JJ",
+      "JK",
+      "JM",
+      "JO",
+      "JP",
+      "JR",
+      "JS",
+      "JT"
+    ],
+    "token_ids": [
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      5840,
+      1803,
+      1646,
+      1745,
+      13276,
+      8018,
+      1825,
+      28946,
+      15015,
+      29595,
+      11568,
+      939,
+      1354,
+      1058,
+      18183,
+      2456,
+      88898,
+      905,
+      1846,
+      802,
+      33869,
+      7839,
+      14006,
+      2860,
+      2926,
+      22828,
+      6844,
+      9798,
+      4738,
+      9265,
+      11261,
+      19278,
+      36513,
+      93801,
+      8335,
+      14544,
+      85266,
+      9110,
+      28000,
+      15137,
+      4525,
+      25261,
+      12717,
+      7116,
+      17078,
+      14497,
+      57339,
+      74909,
+      52072,
+      19305,
+      4887,
+      12607,
+      3580,
+      6281,
+      2036,
+      9362,
+      8533,
+      2080,
+      10911,
+      2925,
+      3040,
+      9690,
+      27731,
+      8023,
+      6901,
+      8702,
+      6211,
+      1123,
+      16307,
+      18990,
+      64045,
+      63037,
+      33380,
+      6151,
+      3392,
+      5449,
+      3967,
+      1113,
+      5095,
+      51923,
+      49600,
+      17099,
+      51483,
+      17756,
+      16037,
+      8135,
+      30237,
+      5683,
+      9992,
+      7444,
+      5751,
+      10284,
+      20887,
+      59884,
+      52396,
+      16103,
+      67547,
+      18535,
+      8006,
+      7263,
+      1425,
+      6878,
+      14453,
+      9097,
+      44072,
+      76089,
+      68720,
+      2662,
+      2629,
+      923,
+      6548,
+      8924,
+      52194,
+      622,
+      1515,
+      1300,
+      37523,
+      44473,
+      36530,
+      3152,
+      93924,
+      3505,
+      15731,
+      6542,
+      14176,
+      11091,
+      1686,
+      11660,
+      80440,
+      18836,
+      26132,
+      5934,
+      24794,
+      40229,
+      3660,
+      11361,
+      10191,
+      8225,
+      3860,
+      78413,
+      17680,
+      15900,
+      78138,
+      15653,
+      5213,
+      22150,
+      39500,
+      10460,
+      35131,
+      21563,
+      43194,
+      27127,
+      3697,
+      20011,
+      24368,
+      15058,
+      23658,
+      8362,
+      16035,
+      24583,
+      52857,
+      38403,
+      60456,
+      81519,
+      40097,
+      16522,
+      29722,
+      21756,
+      18567,
+      1736,
+      48043,
+      87013,
+      22456,
+      23165,
+      55523,
+      13097,
+      50397,
+      41741,
+      23073,
+      6401,
+      86538,
+      16585,
+      11622,
+      2464,
+      84982,
+      75516,
+      36984,
+      58795,
+      47217,
+      59675,
+      5681,
+      3151,
+      1271,
+      887,
+      5203,
+      2685,
+      1849,
+      72470,
+      5370,
+      74063,
+      27629,
+      1655,
+      1728,
+      669,
+      3682,
+      3191,
+      59865,
+      2712,
+      1580,
+      922,
+      77243,
+      2990,
+      78493,
+      5228,
+      2750,
+      42711,
+      44568,
+      56402,
+      48236,
+      38993,
+      43559,
+      61250,
+      32942,
+      86302,
+      25310,
+      26313,
+      81770,
+      12185,
+      78382
+    ],
+    "temperature": 1.0087417621345625,
+    "attention_mode": "noncausal_full_attention",
+    "pooling": "last"
+  },
+  "eval_sha256": "9f812bfbf33e0f2bc049da2fbf1ac5133b7fab1184e770e4992772bc958e9d43",
+  "sample_ids_verified_identical": true,
+  "metrics": {
+    "count": 128,
+    "accuracy": 0.921875,
+    "brier": 0.10658518168031401,
+    "nll": 0.15876529411362902,
+    "ece": 0.05321660374274792,
+    "mean_latency_s": 0.27549482290625527
+  },
+  "wall_seconds": 35.265566732000025,
+  "peak_gpu_allocated_gib": 49.25500202178955,
+  "predictions": [
+    {
+      "id": "gap-temporal-0070-base",
+      "family": "gap-temporal-0070",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "apply_adjustment",
+      "prediction": "apply_adjustment",
+      "probabilities": [
+        0.9999272250357399,
+        3.4135855320805214e-05,
+        3.86391089392251e-05
+      ],
+      "confidence": 0.9999272250357399,
+      "correct": true,
+      "latency_s": 4.995652041250025,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-policy-0075-counterfactual",
+      "family": "gap-policy-0075",
+      "type": "choice",
+      "labels": [
+        "apply_enhanced_controls",
+        "escalate_missing_evidence",
+        "retain_standard_controls"
+      ],
+      "target": "apply_enhanced_controls",
+      "prediction": "apply_enhanced_controls",
+      "probabilities": [
+        0.9999031629069294,
+        2.5041431328614982e-05,
+        7.179566174199569e-05
+      ],
+      "confidence": 0.9999031629069294,
+      "correct": true,
+      "latency_s": 4.995652041250025,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-numeric-0050-base",
+      "family": "gap-numeric-0050",
+      "type": "choice",
+      "labels": [
+        "enhanced_review",
+        "insufficient_data",
+        "standard_review"
+      ],
+      "target": "standard_review",
+      "prediction": "standard_review",
+      "probabilities": [
+        0.03833624772106458,
+        0.0004162097990793528,
+        0.9612475424798561
+      ],
+      "confidence": 0.9612475424798561,
+      "correct": true,
+      "latency_s": 4.995652041250025,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-probability-0295-base",
+      "family": "gap-probability-0295",
+      "type": "choice",
+      "labels": [
+        "analyst_review",
+        "auto_clear",
+        "decline"
+      ],
+      "target": "analyst_review",
+      "prediction": "analyst_review",
+      "probabilities": [
+        0.9987793556948006,
+        0.0010953926239868276,
+        0.00012525168121263282
+      ],
+      "confidence": 0.9987793556948006,
+      "correct": true,
+      "latency_s": 4.995652041250025,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0165-base",
+      "family": "gap-temporal-0165",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "apply_adjustment",
+      "prediction": "apply_adjustment",
+      "probabilities": [
+        0.9999141771907093,
+        3.631724058746165e-05,
+        4.950556870327659e-05
+      ],
+      "confidence": 0.9999141771907093,
+      "correct": true,
+      "latency_s": 0.08113130549998004,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0295-counterfactual",
+      "family": "gap-temporal-0295",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "use_fallback",
+      "prediction": "use_fallback",
+      "probabilities": [
+        0.00017088390575813073,
+        0.00018180647201047404,
+        0.9996473096222314
+      ],
+      "confidence": 0.9996473096222314,
+      "correct": true,
+      "latency_s": 0.08113130549998004,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-policy-0110-counterfactual",
+      "family": "gap-policy-0110",
+      "type": "choice",
+      "labels": [
+        "apply_enhanced_controls",
+        "escalate_missing_evidence",
+        "retain_standard_controls"
+      ],
+      "target": "apply_enhanced_controls",
+      "prediction": "apply_enhanced_controls",
+      "probabilities": [
+        0.9999089801570525,
+        2.3537130223703984e-05,
+        6.748271272371815e-05
+      ],
+      "confidence": 0.9999089801570525,
+      "correct": true,
+      "latency_s": 0.08113130549998004,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-numeric-0190-counterfactual",
+      "family": "gap-numeric-0190",
+      "type": "choice",
+      "labels": [
+        "enhanced_review",
+        "insufficient_data",
+        "standard_review"
+      ],
+      "target": "enhanced_review",
+      "prediction": "enhanced_review",
+      "probabilities": [
+        0.953946880343471,
+        0.00023649823382450918,
+        0.04581662142270456
+      ],
+      "confidence": 0.953946880343471,
+      "correct": true,
+      "latency_s": 0.08113130549998004,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-numeric-0170-counterfactual",
+      "family": "gap-numeric-0170",
+      "type": "choice",
+      "labels": [
+        "enhanced_review",
+        "insufficient_data",
+        "standard_review"
+      ],
+      "target": "enhanced_review",
+      "prediction": "standard_review",
+      "probabilities": [
+        0.24674396958704992,
+        0.0006055538941003861,
+        0.7526504765188498
+      ],
+      "confidence": 0.7526504765188498,
+      "correct": false,
+      "latency_s": 0.08591524824998942,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-policy-0150-base",
+      "family": "gap-policy-0150",
+      "type": "choice",
+      "labels": [
+        "apply_enhanced_controls",
+        "escalate_missing_evidence",
+        "retain_standard_controls"
+      ],
+      "target": "retain_standard_controls",
+      "prediction": "retain_standard_controls",
+      "probabilities": [
+        8.121724429218546e-05,
+        0.0006275063510488896,
+        0.999291276404659
+      ],
+      "confidence": 0.999291276404659,
+      "correct": true,
+      "latency_s": 0.08591524824998942,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-policy-0220-counterfactual",
+      "family": "gap-policy-0220",
+      "type": "choice",
+      "labels": [
+        "apply_enhanced_controls",
+        "escalate_missing_evidence",
+        "retain_standard_controls"
+      ],
+      "target": "apply_enhanced_controls",
+      "prediction": "apply_enhanced_controls",
+      "probabilities": [
+        0.9999031629069294,
+        2.5041431328614982e-05,
+        7.179566174199569e-05
+      ],
+      "confidence": 0.9999031629069294,
+      "correct": true,
+      "latency_s": 0.08591524824998942,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-probability-0105-counterfactual",
+      "family": "gap-probability-0105",
+      "type": "choice",
+      "labels": [
+        "analyst_review",
+        "auto_clear",
+        "decline"
+      ],
+      "target": "auto_clear",
+      "prediction": "auto_clear",
+      "probabilities": [
+        0.0005898321560910529,
+        0.9993338267118856,
+        7.634113202335365e-05
+      ],
+      "confidence": 0.9993338267118856,
+      "correct": true,
+      "latency_s": 0.08591524824998942,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-policy-0260-base",
+      "family": "gap-policy-0260",
+      "type": "choice",
+      "labels": [
+        "apply_enhanced_controls",
+        "escalate_missing_evidence",
+        "retain_standard_controls"
+      ],
+      "target": "retain_standard_controls",
+      "prediction": "retain_standard_controls",
+      "probabilities": [
+        7.176222711784234e-05,
+        0.0004898345495374626,
+        0.9994384032233447
+      ],
+      "confidence": 0.9994384032233447,
+      "correct": true,
+      "latency_s": 0.07788920300004065,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-probability-0260-counterfactual",
+      "family": "gap-probability-0260",
+      "type": "choice",
+      "labels": [
+        "analyst_review",
+        "auto_clear",
+        "decline"
+      ],
+      "target": "auto_clear",
+      "prediction": "auto_clear",
+      "probabilities": [
+        0.0005898321560910529,
+        0.9993338267118856,
+        7.634113202335365e-05
+      ],
+      "confidence": 0.9993338267118856,
+      "correct": true,
+      "latency_s": 0.07788920300004065,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-probability-0150-base",
+      "family": "gap-probability-0150",
+      "type": "choice",
+      "labels": [
+        "analyst_review",
+        "auto_clear",
+        "decline"
+      ],
+      "target": "analyst_review",
+      "prediction": "analyst_review",
+      "probabilities": [
+        0.9994061089398331,
+        0.0004898196249853308,
+        0.0001040714351815878
+      ],
+      "confidence": 0.9994061089398331,
+      "correct": true,
+      "latency_s": 0.07788920300004065,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-policy-0185-base",
+      "family": "gap-policy-0185",
+      "type": "choice",
+      "labels": [
+        "apply_enhanced_controls",
+        "escalate_missing_evidence",
+        "retain_standard_controls"
+      ],
+      "target": "retain_standard_controls",
+      "prediction": "retain_standard_controls",
+      "probabilities": [
+        8.640456284052727e-05,
+        0.000667585044677963,
+        0.9992460103924815
+      ],
+      "confidence": 0.9992460103924815,
+      "correct": true,
+      "latency_s": 0.07788920300004065,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-probability-0025-counterfactual",
+      "family": "gap-probability-0025",
+      "type": "choice",
+      "labels": [
+        "analyst_review",
+        "auto_clear",
+        "decline"
+      ],
+      "target": "auto_clear",
+      "prediction": "auto_clear",
+      "probabilities": [
+        0.0004898386311231569,
+        0.9994467622569816,
+        6.339911189522932e-05
+      ],
+      "confidence": 0.9994467622569816,
+      "correct": true,
+      "latency_s": 0.07204870799995433,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-numeric-0215-base",
+      "family": "gap-numeric-0215",
+      "type": "choice",
+      "labels": [
+        "enhanced_review",
+        "insufficient_data",
+        "standard_review"
+      ],
+      "target": "standard_review",
+      "prediction": "standard_review",
+      "probabilities": [
+        0.09701848324782679,
+        0.0002695115565476318,
+        0.9027120051956256
+      ],
+      "confidence": 0.9027120051956256,
+      "correct": true,
+      "latency_s": 0.07204870799995433,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-probability-0055-counterfactual",
+      "family": "gap-probability-0055",
+      "type": "choice",
+      "labels": [
+        "analyst_review",
+        "auto_clear",
+        "decline"
+      ],
+      "target": "auto_clear",
+      "prediction": "auto_clear",
+      "probabilities": [
+        0.0004898386311231569,
+        0.9994467622569816,
+        6.339911189522932e-05
+      ],
+      "confidence": 0.9994467622569816,
+      "correct": true,
+      "latency_s": 0.07204870799995433,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-policy-0255-counterfactual",
+      "family": "gap-policy-0255",
+      "type": "choice",
+      "labels": [
+        "apply_enhanced_controls",
+        "escalate_missing_evidence",
+        "retain_standard_controls"
+      ],
+      "target": "apply_enhanced_controls",
+      "prediction": "apply_enhanced_controls",
+      "probabilities": [
+        0.9999082264750733,
+        2.8345079544525125e-05,
+        6.342844538221196e-05
+      ],
+      "confidence": 0.9999082264750733,
+      "correct": true,
+      "latency_s": 0.07204870799995433,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-policy-0105-counterfactual",
+      "family": "gap-policy-0105",
+      "type": "choice",
+      "labels": [
+        "apply_enhanced_controls",
+        "escalate_missing_evidence",
+        "retain_standard_controls"
+      ],
+      "target": "apply_enhanced_controls",
+      "prediction": "apply_enhanced_controls",
+      "probabilities": [
+        0.999913034029275,
+        2.35372248289576e-05,
+        6.34287458959989e-05
+      ],
+      "confidence": 0.999913034029275,
+      "correct": true,
+      "latency_s": 0.07778186550001465,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-probability-0165-counterfactual",
+      "family": "gap-probability-0165",
+      "type": "choice",
+      "labels": [
+        "analyst_review",
+        "auto_clear",
+        "decline"
+      ],
+      "target": "auto_clear",
+      "prediction": "auto_clear",
+      "probabilities": [
+        0.0005898321560910529,
+        0.9993338267118856,
+        7.634113202335365e-05
+      ],
+      "confidence": 0.9993338267118856,
+      "correct": true,
+      "latency_s": 0.07778186550001465,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0115-counterfactual",
+      "family": "gap-temporal-0115",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "use_fallback",
+      "prediction": "use_fallback",
+      "probabilities": [
+        0.00019340409969786755,
+        0.00028048818520813395,
+        0.999526107715094
+      ],
+      "confidence": 0.999526107715094,
+      "correct": true,
+      "latency_s": 0.07778186550001465,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-numeric-0060-counterfactual",
+      "family": "gap-numeric-0060",
+      "type": "choice",
+      "labels": [
+        "enhanced_review",
+        "insufficient_data",
+        "standard_review"
+      ],
+      "target": "enhanced_review",
+      "prediction": "standard_review",
+      "probabilities": [
+        0.04860127691371501,
+        0.0002669074733030264,
+        0.951131815612982
+      ],
+      "confidence": 0.951131815612982,
+      "correct": false,
+      "latency_s": 0.07778186550001465,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-probability-0145-base",
+      "family": "gap-probability-0145",
+      "type": "choice",
+      "labels": [
+        "analyst_review",
+        "auto_clear",
+        "decline"
+      ],
+      "target": "analyst_review",
+      "prediction": "analyst_review",
+      "probabilities": [
+        0.9993278145244323,
+        0.0005543939967365362,
+        0.00011779147883116058
+      ],
+      "confidence": 0.9993278145244323,
+      "correct": true,
+      "latency_s": 0.07207201049999412,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0230-base",
+      "family": "gap-temporal-0230",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "apply_adjustment",
+      "prediction": "apply_adjustment",
+      "probabilities": [
+        0.9999148299658497,
+        3.863862883020986e-05,
+        4.653140532014224e-05
+      ],
+      "confidence": 0.9999148299658497,
+      "correct": true,
+      "latency_s": 0.07207201049999412,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-policy-0035-base",
+      "family": "gap-policy-0035",
+      "type": "choice",
+      "labels": [
+        "apply_enhanced_controls",
+        "escalate_missing_evidence",
+        "retain_standard_controls"
+      ],
+      "target": "retain_standard_controls",
+      "prediction": "retain_standard_controls",
+      "probabilities": [
+        9.779790419199023e-05,
+        0.0007102173722930621,
+        0.9991919847235149
+      ],
+      "confidence": 0.9991919847235149,
+      "correct": true,
+      "latency_s": 0.07207201049999412,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-numeric-0050-counterfactual",
+      "family": "gap-numeric-0050",
+      "type": "choice",
+      "labels": [
+        "enhanced_review",
+        "insufficient_data",
+        "standard_review"
+      ],
+      "target": "enhanced_review",
+      "prediction": "enhanced_review",
+      "probabilities": [
+        0.6497390316751495,
+        0.0005917179557018277,
+        0.34966925036914864
+      ],
+      "confidence": 0.6497390316751495,
+      "correct": true,
+      "latency_s": 0.07207201049999412,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-policy-0220-base",
+      "family": "gap-policy-0220",
+      "type": "choice",
+      "labels": [
+        "apply_enhanced_controls",
+        "escalate_missing_evidence",
+        "retain_standard_controls"
+      ],
+      "target": "retain_standard_controls",
+      "prediction": "retain_standard_controls",
+      "probabilities": [
+        0.0001177560277365141,
+        0.0008551550624461577,
+        0.9990270889098173
+      ],
+      "confidence": 0.9990270889098173,
+      "correct": true,
+      "latency_s": 0.07976301550002063,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0055-counterfactual",
+      "family": "gap-temporal-0055",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "use_fallback",
+      "prediction": "use_fallback",
+      "probabilities": [
+        0.00028042103813186755,
+        0.0004326808625276175,
+        0.9992868980993406
+      ],
+      "confidence": 0.9992868980993406,
+      "correct": true,
+      "latency_s": 0.07976301550002063,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0080-base",
+      "family": "gap-temporal-0080",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "apply_adjustment",
+      "prediction": "apply_adjustment",
+      "probabilities": [
+        0.9999062225723229,
+        4.11079798331403e-05,
+        5.266944784402391e-05
+      ],
+      "confidence": 0.9999062225723229,
+      "correct": true,
+      "latency_s": 0.07976301550002063,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-numeric-0190-base",
+      "family": "gap-numeric-0190",
+      "type": "choice",
+      "labels": [
+        "enhanced_review",
+        "insufficient_data",
+        "standard_review"
+      ],
+      "target": "standard_review",
+      "prediction": "enhanced_review",
+      "probabilities": [
+        0.5304629722114864,
+        0.0008976611288794343,
+        0.4686393666596341
+      ],
+      "confidence": 0.5304629722114864,
+      "correct": false,
+      "latency_s": 0.07976301550002063,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-probability-0105-base",
+      "family": "gap-probability-0105",
+      "type": "choice",
+      "labels": [
+        "analyst_review",
+        "auto_clear",
+        "decline"
+      ],
+      "target": "analyst_review",
+      "prediction": "analyst_review",
+      "probabilities": [
+        0.9990388365201966,
+        0.0007554979106127572,
+        0.00020566556919064042
+      ],
+      "confidence": 0.9990388365201966,
+      "correct": true,
+      "latency_s": 1.5816807107500495,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-probability-0120-counterfactual",
+      "family": "gap-probability-0120",
+      "type": "choice",
+      "labels": [
+        "analyst_review",
+        "auto_clear",
+        "decline"
+      ],
+      "target": "auto_clear",
+      "prediction": "auto_clear",
+      "probabilities": [
+        0.0005898321560910529,
+        0.9993338267118856,
+        7.634113202335365e-05
+      ],
+      "confidence": 0.9993338267118856,
+      "correct": true,
+      "latency_s": 1.5816807107500495,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-probability-0165-base",
+      "family": "gap-probability-0165",
+      "type": "choice",
+      "labels": [
+        "analyst_review",
+        "auto_clear",
+        "decline"
+      ],
+      "target": "analyst_review",
+      "prediction": "analyst_review",
+      "probabilities": [
+        0.9990388365201966,
+        0.0007554979106127572,
+        0.00020566556919064042
+      ],
+      "confidence": 0.9990388365201966,
+      "correct": true,
+      "latency_s": 1.5816807107500495,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0105-counterfactual",
+      "family": "gap-temporal-0105",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "use_fallback",
+      "prediction": "use_fallback",
+      "probabilities": [
+        0.0001933930139868653,
+        0.0003377646138063867,
+        0.9994688423722068
+      ],
+      "confidence": 0.9994688423722068,
+      "correct": true,
+      "latency_s": 1.5816807107500495,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-numeric-0140-counterfactual",
+      "family": "gap-numeric-0140",
+      "type": "choice",
+      "labels": [
+        "enhanced_review",
+        "insufficient_data",
+        "standard_review"
+      ],
+      "target": "enhanced_review",
+      "prediction": "enhanced_review",
+      "probabilities": [
+        0.6206546086273605,
+        0.001264828891611455,
+        0.378080562481028
+      ],
+      "confidence": 0.6206546086273605,
+      "correct": true,
+      "latency_s": 0.0780206554999836,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0190-counterfactual",
+      "family": "gap-temporal-0190",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "use_fallback",
+      "prediction": "use_fallback",
+      "probabilities": [
+        0.00023290579593764234,
+        0.0002636310762854674,
+        0.9995034631277769
+      ],
+      "confidence": 0.9995034631277769,
+      "correct": true,
+      "latency_s": 0.0780206554999836,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-probability-0205-counterfactual",
+      "family": "gap-probability-0205",
+      "type": "choice",
+      "labels": [
+        "analyst_review",
+        "auto_clear",
+        "decline"
+      ],
+      "target": "auto_clear",
+      "prediction": "auto_clear",
+      "probabilities": [
+        0.0004898386311231569,
+        0.9994467622569816,
+        6.339911189522932e-05
+      ],
+      "confidence": 0.9994467622569816,
+      "correct": true,
+      "latency_s": 0.0780206554999836,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-policy-0205-counterfactual",
+      "family": "gap-policy-0205",
+      "type": "choice",
+      "labels": [
+        "apply_enhanced_controls",
+        "escalate_missing_evidence",
+        "retain_standard_controls"
+      ],
+      "target": "apply_enhanced_controls",
+      "prediction": "apply_enhanced_controls",
+      "probabilities": [
+        0.9999195873459028,
+        2.0794181637210255e-05,
+        5.961847245994982e-05
+      ],
+      "confidence": 0.9999195873459028,
+      "correct": true,
+      "latency_s": 0.0780206554999836,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-numeric-0100-counterfactual",
+      "family": "gap-numeric-0100",
+      "type": "choice",
+      "labels": [
+        "enhanced_review",
+        "insufficient_data",
+        "standard_review"
+      ],
+      "target": "enhanced_review",
+      "prediction": "standard_review",
+      "probabilities": [
+        0.20334203793342623,
+        0.001950354545838732,
+        0.794707607520735
+      ],
+      "confidence": 0.794707607520735,
+      "correct": false,
+      "latency_s": 0.07988457549998884,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0165-counterfactual",
+      "family": "gap-temporal-0165",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "use_fallback",
+      "prediction": "use_fallback",
+      "probabilities": [
+        0.00024778896317197667,
+        0.00026362715304928023,
+        0.9994885838837787
+      ],
+      "confidence": 0.9994885838837787,
+      "correct": true,
+      "latency_s": 0.07988457549998884,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-policy-0160-counterfactual",
+      "family": "gap-policy-0160",
+      "type": "choice",
+      "labels": [
+        "apply_enhanced_controls",
+        "escalate_missing_evidence",
+        "retain_standard_controls"
+      ],
+      "target": "apply_enhanced_controls",
+      "prediction": "apply_enhanced_controls",
+      "probabilities": [
+        0.9999074101056066,
+        2.0793930244577145e-05,
+        7.179596414879315e-05
+      ],
+      "confidence": 0.9999074101056066,
+      "correct": true,
+      "latency_s": 0.07988457549998884,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-policy-0180-base",
+      "family": "gap-policy-0180",
+      "type": "choice",
+      "labels": [
+        "apply_enhanced_controls",
+        "escalate_missing_evidence",
+        "retain_standard_controls"
+      ],
+      "target": "retain_standard_controls",
+      "prediction": "retain_standard_controls",
+      "probabilities": [
+        9.192686173706956e-05,
+        0.0006675813756452454,
+        0.9992404917626176
+      ],
+      "confidence": 0.9992404917626176,
+      "correct": true,
+      "latency_s": 0.07988457549998884,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-probability-0285-counterfactual",
+      "family": "gap-probability-0285",
+      "type": "choice",
+      "labels": [
+        "analyst_review",
+        "auto_clear",
+        "decline"
+      ],
+      "target": "auto_clear",
+      "prediction": "auto_clear",
+      "probabilities": [
+        0.0004327707677913886,
+        0.9994954629074314,
+        7.176632477722794e-05
+      ],
+      "confidence": 0.9994954629074314,
+      "correct": true,
+      "latency_s": 0.07799589050000577,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-policy-0030-base",
+      "family": "gap-policy-0030",
+      "type": "choice",
+      "labels": [
+        "apply_enhanced_controls",
+        "escalate_missing_evidence",
+        "retain_standard_controls"
+      ],
+      "target": "retain_standard_controls",
+      "prediction": "retain_standard_controls",
+      "probabilities": [
+        8.122317759735658e-05,
+        0.0005544132116106286,
+        0.9993643636107921
+      ],
+      "confidence": 0.9993643636107921,
+      "correct": true,
+      "latency_s": 0.07799589050000577,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-policy-0285-base",
+      "family": "gap-policy-0285",
+      "type": "choice",
+      "labels": [
+        "apply_enhanced_controls",
+        "escalate_missing_evidence",
+        "retain_standard_controls"
+      ],
+      "target": "retain_standard_controls",
+      "prediction": "retain_standard_controls",
+      "probabilities": [
+        8.122317759735658e-05,
+        0.0005544132116106286,
+        0.9993643636107921
+      ],
+      "confidence": 0.9993643636107921,
+      "correct": true,
+      "latency_s": 0.07799589050000577,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-policy-0055-base",
+      "family": "gap-policy-0055",
+      "type": "choice",
+      "labels": [
+        "apply_enhanced_controls",
+        "escalate_missing_evidence",
+        "retain_standard_controls"
+      ],
+      "target": "retain_standard_controls",
+      "prediction": "retain_standard_controls",
+      "probabilities": [
+        8.641434993037553e-05,
+        0.0005544103830564003,
+        0.9993591752670132
+      ],
+      "confidence": 0.9993591752670132,
+      "correct": true,
+      "latency_s": 0.07799589050000577,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0205-base",
+      "family": "gap-temporal-0205",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "apply_adjustment",
+      "prediction": "apply_adjustment",
+      "probabilities": [
+        0.9998992750799811,
+        4.110765831977947e-05,
+        5.961726169906209e-05
+      ],
+      "confidence": 0.9998992750799811,
+      "correct": true,
+      "latency_s": 0.07981393549999893,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-probability-0115-base",
+      "family": "gap-probability-0115",
+      "type": "choice",
+      "labels": [
+        "analyst_review",
+        "auto_clear",
+        "decline"
+      ],
+      "target": "analyst_review",
+      "prediction": "analyst_review",
+      "probabilities": [
+        0.9994631654204177,
+        0.00043275720567444284,
+        0.00010407737390787377
+      ],
+      "confidence": 0.9994631654204177,
+      "correct": true,
+      "latency_s": 0.07981393549999893,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-numeric-0160-counterfactual",
+      "family": "gap-numeric-0160",
+      "type": "choice",
+      "labels": [
+        "enhanced_review",
+        "insufficient_data",
+        "standard_review"
+      ],
+      "target": "enhanced_review",
+      "prediction": "enhanced_review",
+      "probabilities": [
+        0.9306947740606577,
+        0.0003346265348195698,
+        0.06897059940452267
+      ],
+      "confidence": 0.9306947740606577,
+      "correct": true,
+      "latency_s": 0.07981393549999893,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-policy-0200-counterfactual",
+      "family": "gap-policy-0200",
+      "type": "choice",
+      "labels": [
+        "apply_enhanced_controls",
+        "escalate_missing_evidence",
+        "retain_standard_controls"
+      ],
+      "target": "apply_enhanced_controls",
+      "prediction": "apply_enhanced_controls",
+      "probabilities": [
+        0.9999170261365935,
+        1.9544859160106108e-05,
+        6.342900424643787e-05
+      ],
+      "confidence": 0.9999170261365935,
+      "correct": true,
+      "latency_s": 0.07981393549999893,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-probability-0200-counterfactual",
+      "family": "gap-probability-0200",
+      "type": "choice",
+      "labels": [
+        "analyst_review",
+        "auto_clear",
+        "decline"
+      ],
+      "target": "auto_clear",
+      "prediction": "auto_clear",
+      "probabilities": [
+        0.0005898420149595884,
+        0.999350573493051,
+        5.9584491989424756e-05
+      ],
+      "confidence": 0.999350573493051,
+      "correct": true,
+      "latency_s": 0.07987388825000608,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-policy-0165-base",
+      "family": "gap-policy-0165",
+      "type": "choice",
+      "labels": [
+        "apply_enhanced_controls",
+        "escalate_missing_evidence",
+        "retain_standard_controls"
+      ],
+      "target": "retain_standard_controls",
+      "prediction": "retain_standard_controls",
+      "probabilities": [
+        6.339276864052762e-05,
+        0.0005898398081605906,
+        0.9993467674231988
+      ],
+      "confidence": 0.9993467674231988,
+      "correct": true,
+      "latency_s": 0.07987388825000608,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-probability-0080-base",
+      "family": "gap-probability-0080",
+      "type": "choice",
+      "labels": [
+        "analyst_review",
+        "auto_clear",
+        "decline"
+      ],
+      "target": "analyst_review",
+      "prediction": "analyst_review",
+      "probabilities": [
+        0.9987014358855651,
+        0.0011653170020281998,
+        0.00013324711240667153
+      ],
+      "confidence": 0.9987014358855651,
+      "correct": true,
+      "latency_s": 0.07987388825000608,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-policy-0085-base",
+      "family": "gap-policy-0085",
+      "type": "choice",
+      "labels": [
+        "apply_enhanced_controls",
+        "escalate_missing_evidence",
+        "retain_standard_controls"
+      ],
+      "target": "retain_standard_controls",
+      "prediction": "retain_standard_controls",
+      "probabilities": [
+        0.00011069309095696268,
+        0.0007555689452965779,
+        0.9991337379637465
+      ],
+      "confidence": 0.9991337379637465,
+      "correct": true,
+      "latency_s": 0.07987388825000608,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-numeric-0165-counterfactual",
+      "family": "gap-numeric-0165",
+      "type": "choice",
+      "labels": [
+        "enhanced_review",
+        "insufficient_data",
+        "standard_review"
+      ],
+      "target": "enhanced_review",
+      "prediction": "enhanced_review",
+      "probabilities": [
+        0.6631853402879152,
+        0.0013515021107758098,
+        0.33546315760130896
+      ],
+      "confidence": 0.6631853402879152,
+      "correct": true,
+      "latency_s": 0.0798429780000447,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-policy-0240-counterfactual",
+      "family": "gap-policy-0240",
+      "type": "choice",
+      "labels": [
+        "apply_enhanced_controls",
+        "escalate_missing_evidence",
+        "retain_standard_controls"
+      ],
+      "target": "apply_enhanced_controls",
+      "prediction": "apply_enhanced_controls",
+      "probabilities": [
+        0.9999117230782057,
+        2.079401982088313e-05,
+        6.748290197335934e-05
+      ],
+      "confidence": 0.9999117230782057,
+      "correct": true,
+      "latency_s": 0.0798429780000447,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-numeric-0160-base",
+      "family": "gap-numeric-0160",
+      "type": "choice",
+      "labels": [
+        "enhanced_review",
+        "insufficient_data",
+        "standard_review"
+      ],
+      "target": "standard_review",
+      "prediction": "standard_review",
+      "probabilities": [
+        0.013715854580457248,
+        0.00026007545046176096,
+        0.986024069969081
+      ],
+      "confidence": 0.986024069969081,
+      "correct": true,
+      "latency_s": 0.0798429780000447,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-probability-0020-counterfactual",
+      "family": "gap-probability-0020",
+      "type": "choice",
+      "labels": [
+        "analyst_review",
+        "auto_clear",
+        "decline"
+      ],
+      "target": "auto_clear",
+      "prediction": "auto_clear",
+      "probabilities": [
+        0.00035939248342689193,
+        0.9995772001304607,
+        6.340738611235938e-05
+      ],
+      "confidence": 0.9995772001304607,
+      "correct": true,
+      "latency_s": 0.0798429780000447,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-numeric-0025-base",
+      "family": "gap-numeric-0025",
+      "type": "choice",
+      "labels": [
+        "enhanced_review",
+        "insufficient_data",
+        "standard_review"
+      ],
+      "target": "standard_review",
+      "prediction": "standard_review",
+      "probabilities": [
+        0.120943729347091,
+        0.00075181797452937,
+        0.8783044526783796
+      ],
+      "confidence": 0.8783044526783796,
+      "correct": true,
+      "latency_s": 0.08586434049999525,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-policy-0275-counterfactual",
+      "family": "gap-policy-0275",
+      "type": "choice",
+      "labels": [
+        "apply_enhanced_controls",
+        "escalate_missing_evidence",
+        "retain_standard_controls"
+      ],
+      "target": "apply_enhanced_controls",
+      "prediction": "apply_enhanced_controls",
+      "probabilities": [
+        0.9999117230782057,
+        2.079401982088313e-05,
+        6.748290197335934e-05
+      ],
+      "confidence": 0.9999117230782057,
+      "correct": true,
+      "latency_s": 0.08586434049999525,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0145-base",
+      "family": "gap-temporal-0145",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "apply_adjustment",
+      "prediction": "apply_adjustment",
+      "probabilities": [
+        0.9999028564113542,
+        4.1107804046656774e-05,
+        5.603578459915979e-05
+      ],
+      "confidence": 0.9999028564113542,
+      "correct": true,
+      "latency_s": 0.08586434049999525,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-policy-0225-counterfactual",
+      "family": "gap-policy-0225",
+      "type": "choice",
+      "labels": [
+        "apply_enhanced_controls",
+        "escalate_missing_evidence",
+        "retain_standard_controls"
+      ],
+      "target": "apply_enhanced_controls",
+      "prediction": "apply_enhanced_controls",
+      "probabilities": [
+        0.9999173209992024,
+        2.664240631075358e-05,
+        5.603659448688846e-05
+      ],
+      "confidence": 0.9999173209992024,
+      "correct": true,
+      "latency_s": 0.08586434049999525,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-policy-0275-base",
+      "family": "gap-policy-0275",
+      "type": "choice",
+      "labels": [
+        "apply_enhanced_controls",
+        "escalate_missing_evidence",
+        "retain_standard_controls"
+      ],
+      "target": "retain_standard_controls",
+      "prediction": "retain_standard_controls",
+      "probabilities": [
+        9.193401647082082e-05,
+        0.0005898229434274723,
+        0.9993182430401018
+      ],
+      "confidence": 0.9993182430401018,
+      "correct": true,
+      "latency_s": 0.08000824049997846,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0005-counterfactual",
+      "family": "gap-temporal-0005",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "use_fallback",
+      "prediction": "use_fallback",
+      "probabilities": [
+        0.00020577851951206034,
+        0.00020577851951206034,
+        0.9995884429609759
+      ],
+      "confidence": 0.9995884429609759,
+      "correct": true,
+      "latency_s": 0.08000824049997846,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0140-base",
+      "family": "gap-temporal-0140",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "apply_adjustment",
+      "prediction": "apply_adjustment",
+      "probabilities": [
+        0.9998978262349567,
+        4.950476011727943e-05,
+        5.266900492600205e-05
+      ],
+      "confidence": 0.9998978262349567,
+      "correct": true,
+      "latency_s": 0.08000824049997846,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-probability-0160-base",
+      "family": "gap-probability-0160",
+      "type": "choice",
+      "labels": [
+        "analyst_review",
+        "auto_clear",
+        "decline"
+      ],
+      "target": "analyst_review",
+      "prediction": "analyst_review",
+      "probabilities": [
+        0.9987014358855651,
+        0.0011653170020281998,
+        0.00013324711240667153
+      ],
+      "confidence": 0.9987014358855651,
+      "correct": true,
+      "latency_s": 0.08000824049997846,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-policy-0230-counterfactual",
+      "family": "gap-policy-0230",
+      "type": "choice",
+      "labels": [
+        "apply_enhanced_controls",
+        "escalate_missing_evidence",
+        "retain_standard_controls"
+      ],
+      "target": "apply_enhanced_controls",
+      "prediction": "apply_enhanced_controls",
+      "probabilities": [
+        0.9999117230782057,
+        2.079401982088313e-05,
+        6.748290197335934e-05
+      ],
+      "confidence": 0.9999117230782057,
+      "correct": true,
+      "latency_s": 0.08005765799998699,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-policy-0155-base",
+      "family": "gap-policy-0155",
+      "type": "choice",
+      "labels": [
+        "apply_enhanced_controls",
+        "escalate_missing_evidence",
+        "retain_standard_controls"
+      ],
+      "target": "retain_standard_controls",
+      "prediction": "retain_standard_controls",
+      "probabilities": [
+        8.122842812388066e-05,
+        0.0004898299297621893,
+        0.9994289416421139
+      ],
+      "confidence": 0.9994289416421139,
+      "correct": true,
+      "latency_s": 0.08005765799998699,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0275-base",
+      "family": "gap-temporal-0275",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "apply_adjustment",
+      "prediction": "apply_adjustment",
+      "probabilities": [
+        0.9999251225591737,
+        2.8345557041958937e-05,
+        4.6531883784442404e-05
+      ],
+      "confidence": 0.9999251225591737,
+      "correct": true,
+      "latency_s": 0.08005765799998699,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0260-counterfactual",
+      "family": "gap-temporal-0260",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "use_fallback",
+      "prediction": "use_fallback",
+      "probabilities": [
+        0.00021888500712035025,
+        0.00040672190413519285,
+        0.9993743930887444
+      ],
+      "confidence": 0.9993743930887444,
+      "correct": true,
+      "latency_s": 0.08005765799998699,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-probability-0075-base",
+      "family": "gap-probability-0075",
+      "type": "choice",
+      "labels": [
+        "analyst_review",
+        "auto_clear",
+        "decline"
+      ],
+      "target": "analyst_review",
+      "prediction": "analyst_review",
+      "probabilities": [
+        0.9994061089398331,
+        0.0004898196249853308,
+        0.0001040714351815878
+      ],
+      "confidence": 0.9994061089398331,
+      "correct": true,
+      "latency_s": 0.07797023300003048,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-policy-0035-counterfactual",
+      "family": "gap-policy-0035",
+      "type": "choice",
+      "labels": [
+        "apply_enhanced_controls",
+        "escalate_missing_evidence",
+        "retain_standard_controls"
+      ],
+      "target": "apply_enhanced_controls",
+      "prediction": "apply_enhanced_controls",
+      "probabilities": [
+        0.9999089801570525,
+        2.3537130223703984e-05,
+        6.748271272371815e-05
+      ],
+      "confidence": 0.9999089801570525,
+      "correct": true,
+      "latency_s": 0.07797023300003048,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-probability-0085-counterfactual",
+      "family": "gap-probability-0085",
+      "type": "choice",
+      "labels": [
+        "analyst_review",
+        "auto_clear",
+        "decline"
+      ],
+      "target": "auto_clear",
+      "prediction": "auto_clear",
+      "probabilities": [
+        0.00046041778234718044,
+        0.999463231201942,
+        7.635101571080706e-05
+      ],
+      "confidence": 0.999463231201942,
+      "correct": true,
+      "latency_s": 0.07797023300003048,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0025-base",
+      "family": "gap-temporal-0025",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "apply_adjustment",
+      "prediction": "apply_adjustment",
+      "probabilities": [
+        0.9999163588717567,
+        3.4135450886620064e-05,
+        4.950567735667681e-05
+      ],
+      "confidence": 0.9999163588717567,
+      "correct": true,
+      "latency_s": 0.07797023300003048,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-probability-0230-counterfactual",
+      "family": "gap-probability-0230",
+      "type": "choice",
+      "labels": [
+        "analyst_review",
+        "auto_clear",
+        "decline"
+      ],
+      "target": "auto_clear",
+      "prediction": "auto_clear",
+      "probabilities": [
+        0.0005211208814496161,
+        0.9993924617228076,
+        8.641739574282689e-05
+      ],
+      "confidence": 0.9993924617228076,
+      "correct": true,
+      "latency_s": 0.05201936299999943,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0125-counterfactual",
+      "family": "gap-temporal-0125",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "use_fallback",
+      "prediction": "use_fallback",
+      "probabilities": [
+        0.00024777058086320093,
+        0.0003377462695045462,
+        0.9994144831496322
+      ],
+      "confidence": 0.9994144831496322,
+      "correct": true,
+      "latency_s": 0.05201936299999943,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-numeric-0100-base",
+      "family": "gap-numeric-0100",
+      "type": "choice",
+      "labels": [
+        "enhanced_review",
+        "insufficient_data",
+        "standard_review"
+      ],
+      "target": "standard_review",
+      "prediction": "standard_review",
+      "probabilities": [
+        0.0866284198215538,
+        0.0010006248217374425,
+        0.9123709553567088
+      ],
+      "confidence": 0.9123709553567088,
+      "correct": true,
+      "latency_s": 0.05201936299999943,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0010-counterfactual",
+      "family": "gap-temporal-0010",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "use_fallback",
+      "prediction": "use_fallback",
+      "probabilities": [
+        0.0001817951977702728,
+        0.00023292440319865656,
+        0.999585280399031
+      ],
+      "confidence": 0.999585280399031,
+      "correct": true,
+      "latency_s": 0.05201936299999943,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-numeric-0095-base",
+      "family": "gap-numeric-0095",
+      "type": "choice",
+      "labels": [
+        "enhanced_review",
+        "insufficient_data",
+        "standard_review"
+      ],
+      "target": "standard_review",
+      "prediction": "standard_review",
+      "probabilities": [
+        0.010738602565660251,
+        0.00014937693236538518,
+        0.9891120205019743
+      ],
+      "confidence": 0.9891120205019743,
+      "correct": true,
+      "latency_s": 0.07997086275003085,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0145-counterfactual",
+      "family": "gap-temporal-0145",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "use_fallback",
+      "prediction": "use_fallback",
+      "probabilities": [
+        0.00028042103813186755,
+        0.0004326808625276175,
+        0.9992868980993406
+      ],
+      "confidence": 0.9992868980993406,
+      "correct": true,
+      "latency_s": 0.07997086275003085,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-policy-0075-base",
+      "family": "gap-policy-0075",
+      "type": "choice",
+      "labels": [
+        "apply_enhanced_controls",
+        "escalate_missing_evidence",
+        "retain_standard_controls"
+      ],
+      "target": "retain_standard_controls",
+      "prediction": "retain_standard_controls",
+      "probabilities": [
+        0.0001106981175903663,
+        0.0007102082219907923,
+        0.9991790936604188
+      ],
+      "confidence": 0.9991790936604188,
+      "correct": true,
+      "latency_s": 0.07997086275003085,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0090-counterfactual",
+      "family": "gap-temporal-0090",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "use_fallback",
+      "prediction": "use_fallback",
+      "probabilities": [
+        0.00023290187363972855,
+        0.00028047712212163367,
+        0.9994866210042387
+      ],
+      "confidence": 0.9994866210042387,
+      "correct": true,
+      "latency_s": 0.07997086275003085,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-probability-0155-counterfactual",
+      "family": "gap-probability-0155",
+      "type": "choice",
+      "labels": [
+        "analyst_review",
+        "auto_clear",
+        "decline"
+      ],
+      "target": "auto_clear",
+      "prediction": "auto_clear",
+      "probabilities": [
+        0.00046041778234718044,
+        0.999463231201942,
+        7.635101571080706e-05
+      ],
+      "confidence": 0.999463231201942,
+      "correct": true,
+      "latency_s": 0.07810317999997096,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-policy-0055-counterfactual",
+      "family": "gap-policy-0055",
+      "type": "choice",
+      "labels": [
+        "apply_enhanced_controls",
+        "escalate_missing_evidence",
+        "retain_standard_controls"
+      ],
+      "target": "apply_enhanced_controls",
+      "prediction": "apply_enhanced_controls",
+      "probabilities": [
+        0.9999137395621197,
+        2.664231158586118e-05,
+        5.961812629439677e-05
+      ],
+      "confidence": 0.9999137395621197,
+      "correct": true,
+      "latency_s": 0.07810317999997096,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-policy-0140-base",
+      "family": "gap-policy-0140",
+      "type": "choice",
+      "labels": [
+        "apply_enhanced_controls",
+        "escalate_missing_evidence",
+        "retain_standard_controls"
+      ],
+      "target": "retain_standard_controls",
+      "prediction": "retain_standard_controls",
+      "probabilities": [
+        8.640456284052727e-05,
+        0.000667585044677963,
+        0.9992460103924815
+      ],
+      "confidence": 0.9992460103924815,
+      "correct": true,
+      "latency_s": 0.07810317999997096,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0095-counterfactual",
+      "family": "gap-temporal-0095",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "use_fallback",
+      "prediction": "use_fallback",
+      "probabilities": [
+        0.0001933930139868653,
+        0.0003377646138063867,
+        0.9994688423722068
+      ],
+      "confidence": 0.9994688423722068,
+      "correct": true,
+      "latency_s": 0.07810317999997096,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-probability-0080-counterfactual",
+      "family": "gap-probability-0080",
+      "type": "choice",
+      "labels": [
+        "analyst_review",
+        "auto_clear",
+        "decline"
+      ],
+      "target": "auto_clear",
+      "prediction": "auto_clear",
+      "probabilities": [
+        0.0006275199247542625,
+        0.999312897828303,
+        5.9582246942670786e-05
+      ],
+      "confidence": 0.999312897828303,
+      "correct": true,
+      "latency_s": 0.07807273524997527,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0135-counterfactual",
+      "family": "gap-temporal-0135",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "use_fallback",
+      "prediction": "use_fallback",
+      "probabilities": [
+        0.00019338885204914225,
+        0.00035934612211114696,
+        0.9994472650258397
+      ],
+      "confidence": 0.9994472650258397,
+      "correct": true,
+      "latency_s": 0.07807273524997527,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-policy-0045-counterfactual",
+      "family": "gap-policy-0045",
+      "type": "choice",
+      "labels": [
+        "apply_enhanced_controls",
+        "escalate_missing_evidence",
+        "retain_standard_controls"
+      ],
+      "target": "apply_enhanced_controls",
+      "prediction": "apply_enhanced_controls",
+      "probabilities": [
+        0.999913034029275,
+        2.35372248289576e-05,
+        6.34287458959989e-05
+      ],
+      "confidence": 0.999913034029275,
+      "correct": true,
+      "latency_s": 0.07807273524997527,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-policy-0240-base",
+      "family": "gap-policy-0240",
+      "type": "choice",
+      "labels": [
+        "apply_enhanced_controls",
+        "escalate_missing_evidence",
+        "retain_standard_controls"
+      ],
+      "target": "retain_standard_controls",
+      "prediction": "retain_standard_controls",
+      "probabilities": [
+        8.122317759735658e-05,
+        0.0005544132116106286,
+        0.9993643636107921
+      ],
+      "confidence": 0.9993643636107921,
+      "correct": true,
+      "latency_s": 0.07807273524997527,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-policy-0175-counterfactual",
+      "family": "gap-policy-0175",
+      "type": "choice",
+      "labels": [
+        "apply_enhanced_controls",
+        "escalate_missing_evidence",
+        "retain_standard_controls"
+      ],
+      "target": "apply_enhanced_controls",
+      "prediction": "apply_enhanced_controls",
+      "probabilities": [
+        0.9999074101056066,
+        2.0793930244577145e-05,
+        7.179596414879315e-05
+      ],
+      "confidence": 0.9999074101056066,
+      "correct": true,
+      "latency_s": 0.079953532500042,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0065-counterfactual",
+      "family": "gap-temporal-0065",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "use_fallback",
+      "prediction": "use_fallback",
+      "probabilities": [
+        0.0002189261453823889,
+        0.0002189261453823889,
+        0.9995621477092352
+      ],
+      "confidence": 0.9995621477092352,
+      "correct": true,
+      "latency_s": 0.079953532500042,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-numeric-0005-counterfactual",
+      "family": "gap-numeric-0005",
+      "type": "choice",
+      "labels": [
+        "enhanced_review",
+        "insufficient_data",
+        "standard_review"
+      ],
+      "target": "enhanced_review",
+      "prediction": "enhanced_review",
+      "probabilities": [
+        0.6899706884410464,
+        0.001693311390386098,
+        0.3083360001685675
+      ],
+      "confidence": 0.6899706884410464,
+      "correct": true,
+      "latency_s": 0.079953532500042,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0030-counterfactual",
+      "family": "gap-temporal-0030",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "use_fallback",
+      "prediction": "use_fallback",
+      "probabilities": [
+        0.0001509709914079693,
+        0.00018181009568094984,
+        0.9996672189129111
+      ],
+      "confidence": 0.9996672189129111,
+      "correct": true,
+      "latency_s": 0.079953532500042,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-numeric-0130-base",
+      "family": "gap-numeric-0130",
+      "type": "choice",
+      "labels": [
+        "enhanced_review",
+        "insufficient_data",
+        "standard_review"
+      ],
+      "target": "standard_review",
+      "prediction": "enhanced_review",
+      "probabilities": [
+        0.9264118262487989,
+        0.00054679282415525,
+        0.07304138092704578
+      ],
+      "confidence": 0.9264118262487989,
+      "correct": false,
+      "latency_s": 0.051914237750054326,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-numeric-0230-base",
+      "family": "gap-numeric-0230",
+      "type": "choice",
+      "labels": [
+        "enhanced_review",
+        "insufficient_data",
+        "standard_review"
+      ],
+      "target": "standard_review",
+      "prediction": "standard_review",
+      "probabilities": [
+        0.03834120419843829,
+        0.00028702487731734977,
+        0.9613717709242443
+      ],
+      "confidence": 0.9613717709242443,
+      "correct": true,
+      "latency_s": 0.051914237750054326,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0225-base",
+      "family": "gap-temporal-0225",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "apply_adjustment",
+      "prediction": "apply_adjustment",
+      "probabilities": [
+        0.9999008000867797,
+        4.653075219725416e-05,
+        5.2669161023006276e-05
+      ],
+      "confidence": 0.9999008000867797,
+      "correct": true,
+      "latency_s": 0.051914237750054326,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-numeric-0285-counterfactual",
+      "family": "gap-numeric-0285",
+      "type": "choice",
+      "labels": [
+        "enhanced_review",
+        "insufficient_data",
+        "standard_review"
+      ],
+      "target": "enhanced_review",
+      "prediction": "standard_review",
+      "probabilities": [
+        0.08662287704352846,
+        0.001064515766113133,
+        0.9123126071903584
+      ],
+      "confidence": 0.9123126071903584,
+      "correct": false,
+      "latency_s": 0.051914237750054326,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0285-counterfactual",
+      "family": "gap-temporal-0285",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "use_fallback",
+      "prediction": "use_fallback",
+      "probabilities": [
+        0.00020576701469303437,
+        0.00026363822314512213,
+        0.9995305947621619
+      ],
+      "confidence": 0.9995305947621619,
+      "correct": true,
+      "latency_s": 0.052088182499971936,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0075-base",
+      "family": "gap-temporal-0075",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "apply_adjustment",
+      "prediction": "apply_adjustment",
+      "probabilities": [
+        0.9999035952825819,
+        4.3735408064075105e-05,
+        5.26693093540302e-05
+      ],
+      "confidence": 0.9999035952825819,
+      "correct": true,
+      "latency_s": 0.052088182499971936,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0280-counterfactual",
+      "family": "gap-temporal-0280",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "use_fallback",
+      "prediction": "use_fallback",
+      "probabilities": [
+        0.00018178961746373562,
+        0.0002636440333035111,
+        0.9995545663492328
+      ],
+      "confidence": 0.9995545663492328,
+      "correct": true,
+      "latency_s": 0.052088182499971936,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-numeric-0125-counterfactual",
+      "family": "gap-numeric-0125",
+      "type": "choice",
+      "labels": [
+        "enhanced_review",
+        "insufficient_data",
+        "standard_review"
+      ],
+      "target": "enhanced_review",
+      "prediction": "standard_review",
+      "probabilities": [
+        0.16634977040088608,
+        0.0006701840391599978,
+        0.8329800455599539
+      ],
+      "confidence": 0.8329800455599539,
+      "correct": false,
+      "latency_s": 0.052088182499971936,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0045-counterfactual",
+      "family": "gap-temporal-0045",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "use_fallback",
+      "prediction": "use_fallback",
+      "probabilities": [
+        0.0002983740752076411,
+        0.00031744552456514216,
+        0.9993841804002273
+      ],
+      "confidence": 0.9993841804002273,
+      "correct": true,
+      "latency_s": 0.08000930025002617,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-policy-0070-base",
+      "family": "gap-policy-0070",
+      "type": "choice",
+      "labels": [
+        "apply_enhanced_controls",
+        "escalate_missing_evidence",
+        "retain_standard_controls"
+      ],
+      "target": "retain_standard_controls",
+      "prediction": "retain_standard_controls",
+      "probabilities": [
+        9.780207800284279e-05,
+        0.0006675774556618454,
+        0.9992346204663353
+      ],
+      "confidence": 0.9992346204663353,
+      "correct": true,
+      "latency_s": 0.08000930025002617,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0040-base",
+      "family": "gap-temporal-0040",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "apply_adjustment",
+      "prediction": "apply_adjustment",
+      "probabilities": [
+        0.9999008000867797,
+        4.653075219725416e-05,
+        5.2669161023006276e-05
+      ],
+      "confidence": 0.9999008000867797,
+      "correct": true,
+      "latency_s": 0.08000930025002617,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-numeric-0165-base",
+      "family": "gap-numeric-0165",
+      "type": "choice",
+      "labels": [
+        "enhanced_review",
+        "insufficient_data",
+        "standard_review"
+      ],
+      "target": "standard_review",
+      "prediction": "standard_review",
+      "probabilities": [
+        0.14211623135715434,
+        0.0008834318577489672,
+        0.8570003367850967
+      ],
+      "confidence": 0.8570003367850967,
+      "correct": true,
+      "latency_s": 0.08000930025002617,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0155-base",
+      "family": "gap-temporal-0155",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "apply_adjustment",
+      "prediction": "apply_adjustment",
+      "probabilities": [
+        0.9999062226086992,
+        4.110794345484626e-05,
+        5.266944784594001e-05
+      ],
+      "confidence": 0.9999062226086992,
+      "correct": true,
+      "latency_s": 0.0858981824999887,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-numeric-0115-base",
+      "family": "gap-numeric-0115",
+      "type": "choice",
+      "labels": [
+        "enhanced_review",
+        "insufficient_data",
+        "standard_review"
+      ],
+      "target": "standard_review",
+      "prediction": "standard_review",
+      "probabilities": [
+        0.0650696056860209,
+        0.0007516039455865267,
+        0.9341787903683926
+      ],
+      "confidence": 0.9341787903683926,
+      "correct": true,
+      "latency_s": 0.0858981824999887,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-policy-0280-counterfactual",
+      "family": "gap-policy-0280",
+      "type": "choice",
+      "labels": [
+        "apply_enhanced_controls",
+        "escalate_missing_evidence",
+        "retain_standard_controls"
+      ],
+      "target": "apply_enhanced_controls",
+      "prediction": "apply_enhanced_controls",
+      "probabilities": [
+        0.9999031629069294,
+        2.5041431328614982e-05,
+        7.179566174199569e-05
+      ],
+      "confidence": 0.9999031629069294,
+      "correct": true,
+      "latency_s": 0.0858981824999887,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-numeric-0170-base",
+      "family": "gap-numeric-0170",
+      "type": "choice",
+      "labels": [
+        "enhanced_review",
+        "insufficient_data",
+        "standard_review"
+      ],
+      "target": "standard_review",
+      "prediction": "enhanced_review",
+      "probabilities": [
+        0.530432539525288,
+        0.0009549829720566339,
+        0.4686124775026554
+      ],
+      "confidence": 0.530432539525288,
+      "correct": false,
+      "latency_s": 0.0858981824999887,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0150-counterfactual",
+      "family": "gap-temporal-0150",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "use_fallback",
+      "prediction": "use_fallback",
+      "probabilities": [
+        0.00024778896317197667,
+        0.00026362715304928023,
+        0.9994885838837787
+      ],
+      "confidence": 0.9994885838837787,
+      "correct": true,
+      "latency_s": 0.05209382025003606,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0185-counterfactual",
+      "family": "gap-temporal-0185",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "use_fallback",
+      "prediction": "use_fallback",
+      "probabilities": [
+        0.00018178961746373562,
+        0.0002636440333035111,
+        0.9995545663492328
+      ],
+      "confidence": 0.9995545663492328,
+      "correct": true,
+      "latency_s": 0.05209382025003606,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0000-base",
+      "family": "gap-temporal-0000",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "apply_adjustment",
+      "prediction": "apply_adjustment",
+      "probabilities": [
+        0.9999287336380536,
+        3.0157458867979712e-05,
+        4.110890307848782e-05
+      ],
+      "confidence": 0.9999287336380536,
+      "correct": true,
+      "latency_s": 0.05209382025003606,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0210-base",
+      "family": "gap-temporal-0210",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "apply_adjustment",
+      "prediction": "apply_adjustment",
+      "probabilities": [
+        0.999911013173808,
+        3.6317126156463244e-05,
+        5.2669700035508124e-05
+      ],
+      "confidence": 0.999911013173808,
+      "correct": true,
+      "latency_s": 0.05209382025003606,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-numeric-0110-counterfactual",
+      "family": "gap-numeric-0110",
+      "type": "choice",
+      "labels": [
+        "enhanced_review",
+        "insufficient_data",
+        "standard_review"
+      ],
+      "target": "enhanced_review",
+      "prediction": "standard_review",
+      "probabilities": [
+        0.3492453272314946,
+        0.0018027481215728705,
+        0.6489519246469325
+      ],
+      "confidence": 0.6489519246469325,
+      "correct": false,
+      "latency_s": 0.05207567749999953,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0110-base",
+      "family": "gap-temporal-0110",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "apply_adjustment",
+      "prediction": "apply_adjustment",
+      "probabilities": [
+        0.9999093865603143,
+        4.1108108553088265e-05,
+        4.950533113262437e-05
+      ],
+      "confidence": 0.9999093865603143,
+      "correct": true,
+      "latency_s": 0.05207567749999953,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-numeric-0010-base",
+      "family": "gap-numeric-0010",
+      "type": "choice",
+      "labels": [
+        "enhanced_review",
+        "insufficient_data",
+        "standard_review"
+      ],
+      "target": "standard_review",
+      "prediction": "standard_review",
+      "probabilities": [
+        0.15789525915167488,
+        0.0009225508088257082,
+        0.8411821900394995
+      ],
+      "confidence": 0.8411821900394995,
+      "correct": true,
+      "latency_s": 0.05207567749999953,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0265-base",
+      "family": "gap-temporal-0265",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "apply_adjustment",
+      "prediction": "apply_adjustment",
+      "probabilities": [
+        0.9999279178926992,
+        2.834563677566732e-05,
+        4.373647052512949e-05
+      ],
+      "confidence": 0.9999279178926992,
+      "correct": true,
+      "latency_s": 0.05207567749999953,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-probability-0220-counterfactual",
+      "family": "gap-probability-0220",
+      "type": "choice",
+      "labels": [
+        "analyst_review",
+        "auto_clear",
+        "decline"
+      ],
+      "target": "auto_clear",
+      "prediction": "auto_clear",
+      "probabilities": [
+        0.0004898386311231569,
+        0.9994467622569816,
+        6.339911189522932e-05
+      ],
+      "confidence": 0.9994467622569816,
+      "correct": true,
+      "latency_s": 0.07809646775001511,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-numeric-0155-base",
+      "family": "gap-numeric-0155",
+      "type": "choice",
+      "labels": [
+        "enhanced_review",
+        "insufficient_data",
+        "standard_review"
+      ],
+      "target": "standard_review",
+      "prediction": "standard_review",
+      "probabilities": [
+        0.01073803054011588,
+        0.00020361095964798807,
+        0.9890583585002362
+      ],
+      "confidence": 0.9890583585002362,
+      "correct": true,
+      "latency_s": 0.07809646775001511,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-policy-0020-counterfactual",
+      "family": "gap-policy-0020",
+      "type": "choice",
+      "labels": [
+        "apply_enhanced_controls",
+        "escalate_missing_evidence",
+        "retain_standard_controls"
+      ],
+      "target": "apply_enhanced_controls",
+      "prediction": "apply_enhanced_controls",
+      "probabilities": [
+        0.9999218398010891,
+        2.212335402847213e-05,
+        5.603684488250378e-05
+      ],
+      "confidence": 0.9999218398010891,
+      "correct": true,
+      "latency_s": 0.07809646775001511,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-numeric-0265-counterfactual",
+      "family": "gap-numeric-0265",
+      "type": "choice",
+      "labels": [
+        "enhanced_review",
+        "insufficient_data",
+        "standard_review"
+      ],
+      "target": "enhanced_review",
+      "prediction": "enhanced_review",
+      "probabilities": [
+        0.9223030796334658,
+        0.0003316089933569811,
+        0.07736531137317719
+      ],
+      "confidence": 0.9223030796334658,
+      "correct": true,
+      "latency_s": 0.07809646775001511,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-numeric-0130-counterfactual",
+      "family": "gap-numeric-0130",
+      "type": "choice",
+      "labels": [
+        "enhanced_review",
+        "insufficient_data",
+        "standard_review"
+      ],
+      "target": "enhanced_review",
+      "prediction": "standard_review",
+      "probabilities": [
+        0.12088542505578573,
+        0.0012335845639400902,
+        0.8778809903802742
+      ],
+      "confidence": 0.8778809903802742,
+      "correct": false,
+      "latency_s": 0.07227228749997039,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-policy-0120-counterfactual",
+      "family": "gap-policy-0120",
+      "type": "choice",
+      "labels": [
+        "apply_enhanced_controls",
+        "escalate_missing_evidence",
+        "retain_standard_controls"
+      ],
+      "target": "apply_enhanced_controls",
+      "prediction": "apply_enhanced_controls",
+      "probabilities": [
+        0.9999189214917746,
+        2.5041826624288042e-05,
+        5.603668160103818e-05
+      ],
+      "confidence": 0.9999189214917746,
+      "correct": true,
+      "latency_s": 0.07227228749997039,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-probability-0210-base",
+      "family": "gap-probability-0210",
+      "type": "choice",
+      "labels": [
+        "analyst_review",
+        "auto_clear",
+        "decline"
+      ],
+      "target": "analyst_review",
+      "prediction": "analyst_review",
+      "probabilities": [
+        0.9994631654204177,
+        0.00043275720567444284,
+        0.00010407737390787377
+      ],
+      "confidence": 0.9994631654204177,
+      "correct": true,
+      "latency_s": 0.07227228749997039,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    },
+    {
+      "id": "gap-temporal-0160-counterfactual",
+      "family": "gap-temporal-0160",
+      "type": "choice",
+      "labels": [
+        "apply_adjustment",
+        "manual_review",
+        "use_fallback"
+      ],
+      "target": "use_fallback",
+      "prediction": "use_fallback",
+      "probabilities": [
+        0.0002983615695098589,
+        0.00035930839246821474,
+        0.999342330038022
+      ],
+      "confidence": 0.999342330038022,
+      "correct": true,
+      "latency_s": 0.07227228749997039,
+      "provider": "perplexity-ai/pplx-decider-v1.1-27b"
+    }
+  ],
+  "prior": {
+    "public_autojev": {
+      "count": 128,
+      "valid": 128,
+      "accuracy": 0.890625,
+      "brier": 0.142093477009862,
+      "nll": 0.235130064625065,
+      "ece": 0.082350555503835,
+      "mean_latency_s": 0.08143371135949451
+    },
+    "our_banking_finetune": {
+      "count": 128,
+      "valid": 128,
+      "accuracy": 0.9140625,
+      "brier": 0.10715734075815296,
+      "nll": 0.15266051387256172,
+      "ece": 0.020503394083580005,
+      "mean_latency_s": 0.10397870672653653
+    },
+    "jev": {
+      "count": 128,
+      "valid": 128,
+      "accuracy": 0.984375,
+      "brier": 0.0394621350818794,
+      "nll": 0.0900991273683932,
+      "ece": 0.062357954545454584,
+      "mean_latency_s": 0.2217411468123487
+    }
+  },
+  "runtime_packages": {
+    "torch": "2.14.0",
+    "torchvision": "0.29.0",
+    "transformers": "5.17.0",
+    "accelerate": "1.15.0",
+    "pillow": "12.3.0",
+    "flash-linear-attention": "0.5.2",
+    "huggingface-hub": "1.31.0",
+    "safetensors": "0.8.0"
+  },
+  "release_verification": {
+    "checked_files": 46,
+    "checked_gib": 48.61001237574965,
+    "weight_and_source_mismatches": [],
+    "metadata_mismatch": [
+      {
+        "path": "README.md",
+        "bytes": 4208,
+        "sha256": "8886d8a4bed44995a03443f1fa6de4c7103c51f9d979772d48a3fcd5b1a82210"
+      }
+    ],
+    "note": "All model weights, readout, configs, and source matched release-manifest.json. README.md changed on the repository main branch after the recorded release manifest."
+  },
+  "revision": "3b45dead91dfa6d95aad6b95764a606fab2bf7a6"
+}

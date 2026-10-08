@@ -1,5 +1,5 @@
 {
-  "reviewed_date": "2026-10-07",
+  "reviewed_date": "2026-10-08",
   "scope": "Independent public reconstruction; no TypeSafe model weights, architecture, training data, or private labels",
   "sources": {
     "qwen_rlcd": {
@@ -17,6 +17,12 @@
     "autojev": {
       "url": "https://github.com/denis-pplx/autojev",
       "commit": "ee63c1515980491a742f0bd0685c8dc5ca1f00c3"
+    },
+    "pplx_decider_v1_1": {
+      "url": "https://huggingface.co/perplexity-ai/pplx-decider-v1.1-27b",
+      "commit": "3b45dead91dfa6d95aad6b95764a606fab2bf7a6",
+      "release_step": 2446,
+      "decision_index": 61.56
     }
   },
   "models": {
@@ -35,6 +41,12 @@
     "qwen_3_8_27b": {
       "id": "Qwen/Qwen3.8-27B",
       "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0"
+    },
+    "pplx_decider_v1_1_27b": {
+      "id": "perplexity-ai/pplx-decider-v1.1-27b",
+      "revision": "3b45dead91dfa6d95aad6b95764a606fab2bf7a6",
+      "attention_mode": "noncausal_full_attention",
+      "temperature": 1.0087417621345625
     }
   },
   "datasets": {

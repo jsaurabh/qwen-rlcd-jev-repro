@@ -18,12 +18,47 @@ import torch
 import torch.nn.functional as F
 from peft import LoraConfig, PeftModel, get_peft_model
 from safetensors.torch import load_file, save_file
+from transformers.masking_utils import create_recurrent_attention_mask
 
 from autojev.evaluate import fit_temperature, hard_label, label_index, metrics, options, read_rows, evaluate_logits
 from autojev.model import DecisionModel
 
 MODEL = "Qwen/Qwen3.8-27B"
 REVISION = "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0"
+
+
+def enable_noncausal_full_attention(text_model):
+    """Lift causality in SDPA layers while preserving padding and recurrence.
+
+    This is the focused architectural change published with
+    perplexity-ai/pplx-decider-v1.1-27b. Linear-attention layers keep their
+    native recurrent mask.
+    """
+    if text_model.config._attn_implementation != "sdpa":
+        raise ValueError("Noncausal full attention requires SDPA")
+
+    def mask_inputs(module, args, kwargs):
+        if args:
+            raise ValueError("Noncausal full attention requires keyword inputs")
+        if kwargs.get("past_key_values") is not None or kwargs.get("use_cache"):
+            raise ValueError("Noncausal classification does not support a KV cache")
+        embeddings = kwargs.get("inputs_embeds")
+        if embeddings is None:
+            embeddings = module.embed_tokens(kwargs["input_ids"])
+        padding = kwargs.get("attention_mask")
+        if padding is None:
+            padding = torch.ones(embeddings.shape[:2], device=embeddings.device, dtype=torch.bool)
+        if not isinstance(padding, torch.Tensor) or padding.ndim != 2:
+            raise ValueError("Expected the processor's 2D padding mask")
+        kwargs["attention_mask"] = {
+            "full_attention": padding[:, None, None, :].bool(),
+            "linear_attention": create_recurrent_attention_mask(
+                config=module.config, inputs_embeds=embeddings, attention_mask=padding,
+            ),
+        }
+        return args, kwargs
+
+    text_model.register_forward_pre_hook(mask_inputs, with_kwargs=True)
 
 
 def shuffled(rows, rng):
@@ -110,6 +145,10 @@ def main():
     ap.add_argument("--seed", type=int, default=20260922)
     ap.add_argument("--lr", type=float, default=5e-5)
     ap.add_argument("--save-every", type=int, default=250)
+    ap.add_argument(
+        "--attention-mode", choices=("causal", "noncausal_full_attention"), default="causal",
+        help="Lift the causal mask in SDPA layers as in pplx-decider-v1.1-27b.",
+    )
     args = ap.parse_args()
     args.out.mkdir(parents=True, exist_ok=True)
     random.seed(args.seed); torch.manual_seed(args.seed)
@@ -125,6 +164,8 @@ def main():
 
     model = DecisionModel(train=True, base_model=args.base_model, revision=args.revision,
                           gradient_checkpointing=True, cpu_threads=8)
+    if args.attention_mode == "noncausal_full_attention":
+        enable_noncausal_full_attention(model.backbone.language_model)
     if args.resume_artifact:
         model.backbone = PeftModel.from_pretrained(
             model.backbone, args.resume_artifact / "adapter", is_trainable=True,
@@ -142,6 +183,7 @@ def main():
         "format_version": 1, "architecture": "autojev-readout+lora", "base_model": args.base_model,
         "revision": args.revision, "lora_rank": 16, "lora_alpha": 32, "lora_dropout": 0.05,
         "max_length": args.max_length, "micro_batch": args.micro_batch, "grad_accum": args.grad_accum, "seed": args.seed,
+        "attention_mode": args.attention_mode, "pooling": "last",
         "train_rows_available": len(train), "dev_rows": len(dev), "temperature_rows": len(calibration),
         "start_step": args.start_step,
         "resume_artifact": str(args.resume_artifact) if args.resume_artifact else None,

@@ -1,0 +1,23 @@
+{
+  "checked_files": 46,
+  "checked_gib": 48.61001237574965,
+  "mismatches": [
+    {
+      "path": "README.md",
+      "bytes": 4208,
+      "sha256": "8886d8a4bed44995a03443f1fa6de4c7103c51f9d979772d48a3fcd5b1a82210"
+    }
+  ],
+  "seconds": 29.821161233999874,
+  "versions": {
+    "torch": "2.14.0",
+    "torchvision": "0.29.0",
+    "transformers": "5.17.0",
+    "accelerate": "1.15.0",
+    "pillow": "12.3.0",
+    "flash-linear-attention": "0.5.2",
+    "huggingface-hub": "1.31.0",
+    "safetensors": "0.8.0"
+  },
+  "interpretation": "All model weights, readout, configs, and source matched. Only README.md on main differed from the earlier release-manifest entry."
+}

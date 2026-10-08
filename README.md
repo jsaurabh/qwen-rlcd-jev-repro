@@ -11,6 +11,7 @@ This repository publishes the three experiments used in our Jev talk:
 | **Basic MLX** | Qwen2.5-0.5B 4-bit on an M1 Pro | Typed `choice`, `score`, and `noul` decisions; candidate-token scoring; LoRA; temperature calibration |
 | **Nimble** | Qwen2.5-1.5B on MLX and Qwen3.5-9B on Colab | Contrastive candidate classification, option-order controls, a targeted data mix, and public JevBench evaluation |
 | **AutoJev-style Colab** | Qwen3.8-27B on a 98 GB RTX Pro 6000 | A 255-way learned readout plus LoRA, strict length filtering, checkpoint/resume, calibration, and comparison with public AutoJev and Jev |
+| **Perplexity decider v1.1** | Released Qwen3.8-27B checkpoint on a 98 GB RTX Pro 6000 | Noncausal full-attention layers, exact released inference, and a controlled path from our LoRA recipe toward the 61.56 Decision Index model |
 
 The common idea is to turn a decoder model into a decision model: serialize state and a typed question, score only valid candidates instead of generating an answer, train those scores with classification objectives, then calibrate them on held-out data.
 
@@ -63,10 +64,15 @@ These numbers describe the committed protocols and datasets. They are not genera
 | Nimble 9B | 324-row holdout | 87.7% | 0.458 | 0.210 | — |
 | Nimble + gap data mix | Public JevBench subset, 231 rows | 79.7% | — | 0.290 | 0.089 |
 | Our 27B finetune | Same 128 banking cases | 91.4% | 0.153 | 0.107 | 0.021 |
+| Perplexity decider v1.1 27B | Same 128 banking cases | 92.2% | 0.159 | 0.107 | 0.053 |
 | Public AutoJev-27B | Same 128 banking cases | 89.1% | 0.235 | 0.142 | 0.082 |
 | Jev 1.13.0 | Same 128 banking cases | 98.4% | 0.090 | 0.039 | 0.062 |
 
 The 128-case evaluation is narrow, synthetic, and banking-focused. Per-case outputs are in [`results/colab/autojev-27b-v4/three-way-comparison.json`](results/colab/autojev-27b-v4/three-way-comparison.json).
+
+See [`docs/pplx-decider-v1.1.md`](docs/pplx-decider-v1.1.md) for the released
+training configuration, the exact-checkpoint result, the limits of a
+single-GPU reproduction, and the noncausal LoRA ablation command.
 
 ## Repository map
 

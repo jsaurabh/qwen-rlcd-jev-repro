@@ -8,6 +8,7 @@ This repository contains original experiment code and synthetic datasets. It doe
 | [Bespoke Nimble](https://github.com/bespokelabsai/nimble) | Candidate classification, contrastive data, and evaluation controls | `f136b3f75721fda4ea961f73993cc50b08488835` |
 | [JevBench](https://github.com/fstandhartinger/jevbench) | Public benchmark | `5e95f23cbb7be098a9061fea924c4421620ab1a5` |
 | [AutoJev](https://github.com/denis-pplx/autojev) | 255-way decision readout and public data builder | `ee63c1515980491a742f0bd0685c8dc5ca1f00c3` |
+| [pplx-decider-v1.1-27b](https://huggingface.co/perplexity-ai/pplx-decider-v1.1-27b) | Released noncausal 27B checkpoint, training source, and provenance | release step `2446`; file hashes in its `release-manifest.json` |
 | [MLX-LM](https://github.com/ml-explore/mlx-lm) | Apple-Silicon model loading and LoRA primitives | versions pinned in `requirements.lock.txt` |
 
 Model repositories are downloaded separately. Review their model cards and licenses before redistribution or commercial use.

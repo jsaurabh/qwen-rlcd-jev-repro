@@ -1,0 +1,124 @@
+{
+  "status": "complete",
+  "steps": 1,
+  "examples_seen": 1,
+  "temperature": 0.05000000000000001,
+  "development": {
+    "count": 4,
+    "accuracy": 0.75,
+    "ece": 0.2689645450052873,
+    "brier": 0.5028772317380202,
+    "nll": 6.927477712555274,
+    "reliability": [
+      {
+        "lower": 0.0,
+        "upper": 0.06666666666666667,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lower": 0.06666666666666667,
+        "upper": 0.13333333333333333,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lower": 0.13333333333333333,
+        "upper": 0.2,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lower": 0.2,
+        "upper": 0.26666666666666666,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lower": 0.26666666666666666,
+        "upper": 0.3333333333333333,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lower": 0.3333333333333333,
+        "upper": 0.4,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lower": 0.4,
+        "upper": 0.4666666666666667,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lower": 0.4666666666666667,
+        "upper": 0.5333333333333333,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lower": 0.5333333333333333,
+        "upper": 0.6,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lower": 0.6,
+        "upper": 0.6666666666666666,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lower": 0.6666666666666666,
+        "upper": 0.7333333333333333,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lower": 0.7333333333333333,
+        "upper": 0.8,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lower": 0.8,
+        "upper": 0.8666666666666667,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lower": 0.8666666666666667,
+        "upper": 0.9333333333333333,
+        "count": 1,
+        "confidence": 0.9241418199787566,
+        "accuracy": 1.0
+      },
+      {
+        "lower": 0.9333333333333333,
+        "upper": 1.0,
+        "count": 3,
+        "confidence": 0.9999999999999686,
+        "accuracy": 0.6666666666666666
+      }
+    ],
+    "zero_probability_count": 0
+  },
+  "wall_seconds": 1.9606773600000906,
+  "peak_gpu_allocated_gib": 50.245779037475586,
+  "last_loss": 0.0025197681970894337
+}

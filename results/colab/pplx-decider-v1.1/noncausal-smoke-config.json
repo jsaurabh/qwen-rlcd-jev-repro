@@ -1,0 +1,21 @@
+{
+  "format_version": 1,
+  "architecture": "autojev-readout+lora",
+  "base_model": "Qwen/Qwen3.8-27B",
+  "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "lora_rank": 16,
+  "lora_alpha": 32,
+  "lora_dropout": 0.05,
+  "max_length": 512,
+  "micro_batch": 1,
+  "grad_accum": 1,
+  "seed": 20260922,
+  "attention_mode": "noncausal_full_attention",
+  "pooling": "last",
+  "train_rows_available": 128,
+  "dev_rows": 4,
+  "temperature_rows": 4,
+  "start_step": 0,
+  "resume_artifact": null,
+  "trainable_parameters": 80997376
+}
