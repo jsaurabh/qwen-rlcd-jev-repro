@@ -55,6 +55,20 @@ The 9B notebook is the inexpensive preflight; the 27B notebook reproduces the fu
 
 The completed run used rank-16 LoRA plus a 255-way readout, 49,039 training rows, an effective batch of 32, and 1,533 optimizer steps. It peaked at 52.43 GiB of allocated GPU memory.
 
+## Call your model through an API
+
+Use the lightweight Python client and local GPU server in [`decision_api/`](decision_api/).
+The primary interface is `/v1/decisions`, with `/v1/systemone` compatibility for
+existing Jev experiments. Both return full candidate distributions from the same
+saved model. See [API comparison, setup, and examples](docs/decision-api.md).
+
+```bash
+python -m examples.banking_decisions --provider local
+```
+
+Start the server first using the linked setup guide. The same example can call
+OpenAI Decisions or Jev with `--provider openai` or `--provider jev`.
+
 ## Frozen results
 
 These numbers describe the committed protocols and datasets. They are not general model rankings.
