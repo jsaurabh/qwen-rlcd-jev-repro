@@ -40,16 +40,6 @@ def check_data() -> None:
     assert sha(all_path) == gap["sha256"]
     assert sum(1 for _ in all_path.open()) == gap["rows"]
 
-    for manifest_path in sorted((ROOT / "data/mlx").glob("*/manifest.json")):
-        manifest = json.loads(manifest_path.read_text())
-        for split in ("train", "validation", "test"):
-            item = manifest[split]
-            data_path = manifest_path.parent / f"{split}.jsonl"
-            assert sha(data_path) == item["sha256"], data_path
-            expected = item.get("rows", item.get("cases"))
-            assert sum(1 for _ in data_path.open()) == expected, data_path
-
-
 def check_manifest() -> None:
     manifest_path = ROOT / "PUBLIC_MANIFEST.sha256"
     if not manifest_path.is_file():

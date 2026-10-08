@@ -1,122 +1,134 @@
 # Reproduction guide
 
-## 1. Verify the checkout
+Run this first after cloning:
 
 ```bash
 python3 scripts/verify_public_repo.py
 ```
 
-The verifier checks committed JSON/JSONL syntax, frozen dataset hashes and row counts, notebook cleanliness, file-size policy, and common secret patterns.
+It verifies committed JSON/JSONL files, dataset hashes, notebook cleanliness, file-size limits, the publication manifest, and common secret patterns.
 
-## 2. Minimal MLX experiment (0.5B)
+## 1. Basic MLX recipe
 
 Tested on an M1 Pro with 16 GiB unified memory and Python 3.11.
 
 ```bash
 ./setup.sh --small
-.venv/bin/python mlx_jev_repro.py --out runs/smoke-repeat
+.venv/bin/python mlx_jev_repro.py --out runs/mlx-smoke
 ```
 
-What it does:
+The script constructs a shared state/schema prefix with `choice`, `score`, and `noul` branches; scores one-token candidates without generating output text; trains rank-4 query/value LoRA adapters in the last four blocks; runs 12 supervised plus four bandit-style updates; and fits a scalar temperature on validation data only.
 
-- downloads the pinned `mlx-community/Qwen2.5-0.5B-Instruct-4bit` revision;
-- constructs one shared state/schema prefix with Choice, Score, and Noul branches;
-- scores distinct one-token candidate letters without generating output text;
-- trains rank-4 query/value adapters in the last four blocks for 12 supervised and four bandit updates;
-- fits one scalar temperature on validation only;
-- writes config, splits, logits, predictions, adapter, calibration, and report under the requested output directory.
+It writes the configuration, splits, logits, predictions, adapter, calibration data, and report beneath `runs/mlx-smoke`. The frozen reference is `results/mlx/smoke-0.5b-report.json`.
 
-Publication-verification characteristics: 45,056 trainable parameters, 5.23 seconds of training compute, 9.34 seconds after imports end-to-end, 0.551 GB MLX peak allocation, and about 68 ms for a warm three-field call. Initial dependency/model download is additional. Metal timings and tiny-sample metrics vary across OS/MLX versions; compare the regenerated `report.json` with `results/mlx/smoke-0.5b-report.json` rather than expecting byte-identical floats.
+Inference with the saved adapter:
 
-## 3. Faithful public Qwen-RLCD path (1.5B)
+```bash
+.venv/bin/python mlx_jev_repro.py \
+  --adapter runs/mlx-smoke/adapter \
+  --state "A customer reports an unauthorized transfer in progress."
+```
+
+Add `--compare-jev` after exporting `TYPESAFE_API_KEY` to score the same input with Jev.
+
+## 2. Nimble scale-down on MLX
 
 ```bash
 ./setup.sh --full
-.venv/bin/python faithful_rlcd.py --out runs/faithful-repeat
-```
-
-This preserves the public engine's prompt, answer-token boundary, shared prefill, suffix batching, and candidate softmax. Training uses rank-4 LoRA on query/value projections in the final four blocks, 80 supervised updates, accumulation 4, learning rate `5e-5`, and CE plus half the multiclass Brier loss. Validation selects the checkpoint and fits temperature; test is untouched until the end.
-
-The exact committed splits are in `data/mlx/faithful-v1`. The reference M1 run took 147 seconds end-to-end and 1.194 GB of MLX-allocated memory.
-
-Direct inference after training:
-
-```bash
-.venv/bin/python faithful_rlcd.py \
-  --adapter runs/faithful-repeat/best \
-  --state "A customer reports unauthorized transfers occurring right now."
-```
-
-## 4. Other M1 experiments
-
-```bash
-# Nimble recipe scaled to 1.5B (about 63 minutes for the full rank-16 run).
 .venv/bin/python nimble_1_5b_mlx.py \
-  --rank 16 --layers 28 --out runs/nimble-1.5b-r16-all-repeat
-
-# Banking-only minimal pairs.
-.venv/bin/python banking_contrastive_mlx.py \
-  --out runs/banking-contrastive-v3-repeat
-
-# Broader banking curriculum.
-.venv/bin/python banking_v4_mlx.py \
-  --out runs/banking-v4-repeat
+  --rank 16 \
+  --layers 28 \
+  --out runs/nimble-1.5b
 ```
 
-The Nimble scale-down is a documented negative result: the 1.5B adapter collapsed to candidate position B. Do not report its improved NLL as improved classification; inspect accuracy, pair accuracy, and order-shuffled predictions together.
+This uses the pinned Nimble repository's public data and prompt code. The full reference run took about 63 minutes on an M1 Pro. It collapsed toward candidate position B, so treat it as a documented failure mode rather than a successful small-model result. Inspect normal and option-shuffled accuracy alongside NLL and Brier score. The frozen report is `results/mlx/nimble-1.5b-report.json`.
 
-## 5. Colab 9B experiments
+For a quick code-path check:
 
-Open `notebooks/autojev_9b_lora.ipynb` for the first AutoJev-style LoRA pilot. The `colab/` directory also includes the later Nimble data-mix trainer and JevBench evaluator. Upstream sources are pinned in `THIRD_PARTY.md`.
+```bash
+.venv/bin/python nimble_1_5b_mlx.py \
+  --max-steps 2 --eval-limit 16 --skip-shuffled-eval \
+  --out runs/nimble-smoke
+```
 
-The completed Nimble 9B run used Qwen3.5-9B, rank-16 LoRA, 2,676 contrastive examples, effective batch 8, and 335 optimizer steps. Its frozen 324-row holdout rose from 66.4% to 87.7% accuracy. See `results/colab/nimble-9b/`.
+## 3. Nimble 9B Colab run
 
-## 6. Colab 27B experiment
+In a fresh GPU Colab notebook, mount Drive and run:
 
-Open `notebooks/autojev_27b_reproduction.ipynb` and run cells in order. The notebook mounts Drive interactively, installs the pinned AutoJev commit, builds data, filters overlength branches, performs a one-step preflight, and launches the full run.
+```bash
+!git clone https://github.com/jsaurabh/qwen-rlcd-jev-repro.git /content/qwen-rlcd-jev
+!git clone https://github.com/bespokelabsai/nimble.git /content/nimble
+!git -C /content/nimble checkout --detach f136b3f75721fda4ea961f73993cc50b08488835
+!python -m pip install -q -e /content/nimble
+```
+
+Then launch the data-mix run. Its checkpoints go directly to Drive:
+
+The later data-mix experiment uses:
+
+```bash
+!python -u /content/qwen-rlcd-jev/colab/train_gap_mix.py \
+  --nimble /content/nimble \
+  --gap /content/qwen-rlcd-jev/data/jev_gap_curriculum_v1 \
+  --out /content/drive/MyDrive/qwen-rlcd-jev/nimble-gap-9b
+```
+
+Generate the committed gap curriculum locally with:
+
+```bash
+python3 tools/generate_gap_curriculum.py \
+  --output data/jev_gap_curriculum_v1 \
+  --pairs-per-family 300 \
+  --seed 20260921
+```
+
+Frozen reports are under `results/colab/nimble-9b/` and `results/colab/nimble-data-mix-v2/`.
+
+## 4. AutoJev-style 27B Colab run
+
+Open `notebooks/autojev_9b_lora.ipynb` for the lower-cost preflight or `notebooks/autojev_27b_reproduction.ipynb` for the completed large experiment. The 27B notebook mounts Google Drive, installs the pinned AutoJev source, builds and filters the data, performs a one-step preflight, and launches the full trainer.
 
 Reference configuration:
 
 | Parameter | Value |
 |---|---|
 | Base | `Qwen/Qwen3.8-27B` |
-| Base revision | `1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0` |
-| Architecture | AutoJev 255-way readout + rank-16 LoRA |
+| Revision | `1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0` |
+| Trainable layers | rank-16 LoRA plus 255-way readout |
 | Trainable parameters | 80,997,376 |
 | Maximum branch length | 512 tokens, strict rejection |
-| Retained training rows | 49,039 |
-| Microbatch / accumulation | 4 / 8 (effective 32) |
+| Training rows | 49,039 |
+| Microbatch / accumulation | 4 / 8 |
 | Optimizer steps | 1,533 |
 | Learning rate | `5e-5` |
-| Calibration | scalar temperature, separate 512-row fold |
+| Calibration | scalar temperature on a separate fold |
 | Reference GPU | RTX PRO 6000 Blackwell, 98 GB |
 | Peak allocated memory | 52.43 GiB |
-| Final resumed wall time | 11,786 seconds |
 
-The historical job was interrupted and resumed from checkpoint 300. That checkpoint contained adapter/readout weights but no AdamW state, so optimizer moments restarted. The frozen report is the result of that run. The public trainer now saves `training_state.pt` with AdamW and RNG state; future resumes are exact.
+The historical run resumed after an interruption from a checkpoint that did not contain optimizer state. The public trainer now saves LoRA/readout weights, AdamW state, and RNG state so future resumes are exact.
 
-## 7. Live Jev comparison
+## 5. Compare the 27B model with Jev
 
-Create `.env` locally or add `TYPESAFE_API_KEY` to Colab Secrets. Never paste the key into source or a notebook cell.
+Put `TYPESAFE_API_KEY` in Colab Secrets or export it in the shell. Do not paste it into a notebook cell.
 
 ```bash
-set -a
-. ./.env
-set +a
-python colab/eval_autojev27b_vs_jev.py \
+python -u colab/eval_autojev27b_vs_jev.py \
   --artifact /path/to/selected \
   --eval-file data/jev_gap_curriculum_v1/eval.jsonl \
   --output runs/autojev27b-vs-jev \
-  --limit 128 --batch-size 4 --workers 4 --jev-model jev-1.13.0
+  --limit 128 \
+  --batch-size 4 \
+  --workers 4 \
+  --jev-model jev-1.13.0
 ```
 
-The evaluator caches completed Jev responses, records normalized candidate probabilities and input hashes, and joins reference labels only after inference. The committed three-way report used identical 128 case IDs for public AutoJev-27B, our banking finetune, and Jev.
+The evaluator caches completed API responses, records normalized candidate probabilities and input hashes, and joins labels only after inference. To evaluate the public model without the banking finetune, use `colab/eval_public_autojev27b.py`.
 
-## 8. Scaling safely
+## Practical scaling rules
 
-- Increase model size only after the one-step preflight saves and reloads a checkpoint.
-- Keep the calibration fold and final test isolated by family, not just row.
-- Preserve option-order augmentation and report shuffled-order results.
-- Prefer adding diverse, reviewed counterfactual families over repeating templates.
-- Record model/data revisions, dataset hashes, per-case predictions, optimizer state, and RNG state.
-- Put checkpoints on Drive or a model registry. Keep only compact configs/reports in Git.
+- Run a one-step preflight before committing to a large job.
+- Save checkpoints to Drive, including optimizer and RNG state.
+- Split calibration and test sets by problem family, not only by row.
+- Randomize option order during training and report shuffled-order accuracy.
+- Record immutable model/data revisions, hashes, and per-case predictions.
+- Keep weights and secrets out of Git; commit only compact evidence.

@@ -27,8 +27,6 @@ clone_at() {
   git -C "$directory" checkout --detach "$revision"
 }
 
-clone_at https://huggingface.co/harshatheg/Qwen-2.5-1B-RLCD upstream 2af86848be75847ccb3553b0941cc51d6ef7e4e9
-
 .venv/bin/python - <<'PY'
 from huggingface_hub import snapshot_download
 snapshot_download(

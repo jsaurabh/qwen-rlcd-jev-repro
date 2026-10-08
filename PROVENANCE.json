@@ -38,8 +38,7 @@
     }
   },
   "datasets": {
-    "gap_curriculum": "data/jev_gap_curriculum_v1/manifest.json",
-    "mlx_frozen_splits": "data/mlx/*/manifest.json"
+    "gap_curriculum": "data/jev_gap_curriculum_v1/manifest.json"
   },
   "weights_policy": "Base weights, adapters, readouts, and optimizer state are not committed to Git. Setup scripts download bases; training scripts regenerate adapters."
 }

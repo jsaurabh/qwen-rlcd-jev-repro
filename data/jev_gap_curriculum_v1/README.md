@@ -12,7 +12,7 @@ kept wholly in train or eval (1,920/480 rows) to prevent near-duplicate leakage.
 Generate it on Colab or locally:
 
 ```bash
-python generate_gap_curriculum.py \
+python tools/generate_gap_curriculum.py \
   --output data/jev_gap_curriculum_v1 \
   --pairs-per-family 300 \
   --seed 20260921
