@@ -1,5 +1,8 @@
 # Reproducing Jev-like decision models with Qwen
 
+[![Open 27B reproduction in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jsaurabh/qwen-rlcd-jev-repro/blob/main/notebooks/autojev_27b_reproduction.ipynb)
+[![Open 9B pilot in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/jsaurabh/qwen-rlcd-jev-repro/blob/main/notebooks/autojev_9b_lora.ipynb)
+
 This repository contains the code, synthetic data, frozen reports, and Colab workflows used in our Jev-like decision-model experiments. It is designed so a technically experienced reader can reproduce the Apple-Silicon MLX runs, inspect every evaluation input, and rerun the larger CUDA experiments.
 
 The central pattern is simple:
