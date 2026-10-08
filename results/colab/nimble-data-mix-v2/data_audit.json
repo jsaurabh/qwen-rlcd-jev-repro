@@ -1,0 +1,27 @@
+{
+  "mix": "70_original_20_gap_10_hard_replay",
+  "original_train_rows": 2676,
+  "gap_train_rows": 764,
+  "hard_replay_rows": 382,
+  "combined_train_rows": 3822,
+  "original_eval_rows": 324,
+  "gap_eval_rows": 480,
+  "gap_pair_leakage": false,
+  "original_train_sha256": "beadbb9b81837f7c339e090cd210ce91f65a55f2a3ada1ce9b623765b8d6fe2e",
+  "gap_train_sha256": "819898ee096d50445c70263778a50dc6cb1bea03d6df6a725b2ff05ad90c7006",
+  "gap_eval_sha256": "9f812bfbf33e0f2bc049da2fbf1ac5133b7fab1184e770e4992772bc958e9d43",
+  "seed": 17,
+  "max_length": 2048,
+  "gap_pair_quotas": {
+    "temporal": 96,
+    "numeric": 96,
+    "probability": 95,
+    "policy": 95
+  },
+  "replay_kinds": [
+    "noul",
+    "score"
+  ],
+  "optimizer_steps": 478,
+  "warmup_steps": 48
+}

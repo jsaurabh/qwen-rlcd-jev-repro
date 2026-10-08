@@ -1,0 +1,456 @@
+{
+  "contract": {
+    "task": "banking_balanced_candidate_classification_v4",
+    "model": "mlx-community/Qwen2.5-1.5B-Instruct-4bit",
+    "rank": 8,
+    "layers": 8,
+    "targets": [
+      "self_attn.q_proj",
+      "self_attn.k_proj",
+      "self_attn.v_proj",
+      "self_attn.o_proj",
+      "mlp.gate_proj",
+      "mlp.up_proj",
+      "mlp.down_proj"
+    ],
+    "seed": 29,
+    "learning_rate": 2e-05,
+    "effective_batch": 8,
+    "steps": 96,
+    "warmup_steps": 10,
+    "max_tokens": 1536,
+    "pair_aware_batches": true,
+    "candidate_order_training": "seeded per record 29",
+    "validation_orders": [
+      "original",
+      29,
+      30
+    ],
+    "prompt_code_sha256": "a0a0f94d0f65e972bc20d088678ad3d595ff1c42b9c0d78f96034526303f63fc",
+    "dataset": {
+      "train": {
+        "rows": 768,
+        "pairs": 384,
+        "sha256": "67ff23cbb0935b776e62c1c3b858022f60a4c3bc9b802f8b74c33a786ff6e6aa",
+        "tasks": {
+          "authorization": 64,
+          "authorization_negative": 64,
+          "safe_to_release": 64,
+          "missing_evidence": 64,
+          "manual_exception": 64,
+          "route_unknown": 64,
+          "route_operations": 64,
+          "adequacy": 64,
+          "trap": 64,
+          "multi_hop": 64,
+          "temporal": 64,
+          "long_policy": 64
+        },
+        "targets": {
+          "False": 224,
+          "True": 224,
+          "unknown": 64,
+          "approve": 64,
+          "manual_review": 16,
+          "payments": 32,
+          "fraud": 32,
+          "operations": 32,
+          "0": 16,
+          "deny": 16,
+          "1": 16,
+          "2": 16,
+          "3": 16
+        }
+      },
+      "validation": {
+        "rows": 192,
+        "pairs": 96,
+        "sha256": "b3bdaaf458a9b447cc03d55c6bca2c7a0d8ab8ef2c97566e1a165cda9926cf64",
+        "tasks": {
+          "authorization": 16,
+          "authorization_negative": 16,
+          "safe_to_release": 16,
+          "missing_evidence": 16,
+          "manual_exception": 16,
+          "route_unknown": 16,
+          "route_operations": 16,
+          "adequacy": 16,
+          "trap": 16,
+          "multi_hop": 16,
+          "temporal": 16,
+          "long_policy": 16
+        },
+        "targets": {
+          "False": 56,
+          "True": 56,
+          "unknown": 16,
+          "approve": 16,
+          "manual_review": 4,
+          "payments": 8,
+          "fraud": 8,
+          "operations": 8,
+          "0": 4,
+          "deny": 4,
+          "1": 4,
+          "2": 4,
+          "3": 4
+        }
+      },
+      "test": {
+        "rows": 192,
+        "pairs": 96,
+        "sha256": "b4d28618f4989d0d4c71883df4dea98c8f67d89f4f3fb9b3991eb1a8d0d9bbdd",
+        "tasks": {
+          "authorization": 16,
+          "authorization_negative": 16,
+          "safe_to_release": 16,
+          "missing_evidence": 16,
+          "manual_exception": 16,
+          "route_unknown": 16,
+          "route_operations": 16,
+          "adequacy": 16,
+          "trap": 16,
+          "multi_hop": 16,
+          "temporal": 16,
+          "long_policy": 16
+        },
+        "targets": {
+          "False": 56,
+          "True": 56,
+          "unknown": 16,
+          "approve": 16,
+          "manual_review": 4,
+          "payments": 8,
+          "fraud": 8,
+          "operations": 8,
+          "0": 4,
+          "deny": 4,
+          "1": 4,
+          "2": 4,
+          "3": 4
+        }
+      }
+    },
+    "selection": "minimum accuracy and pair accuracy over three validation orders, with ECE penalty; JevBench excluded"
+  },
+  "selected_step": 96,
+  "validation": [
+    {
+      "by_kind": {
+        "all": {
+          "count": 192,
+          "correct": 127,
+          "accuracy": 0.6614583333333334,
+          "nll": 0.6846171976260212,
+          "brier": 0.40154505219942477
+        },
+        "choice": {
+          "count": 64,
+          "correct": 51,
+          "accuracy": 0.796875,
+          "nll": 0.7247838167343118,
+          "brier": 0.3372267279998888
+        },
+        "noul": {
+          "count": 112,
+          "correct": 68,
+          "accuracy": 0.6071428571428571,
+          "nll": 0.5711902181247315,
+          "brier": 0.400180952556855
+        },
+        "score": {
+          "count": 16,
+          "correct": 8,
+          "accuracy": 0.5,
+          "nll": 1.3179395777018885,
+          "brier": 0.6683670464955564
+        }
+      },
+      "contrastive_family_accuracy": 0.40625,
+      "contrastive_pair_accuracy": 0.40625,
+      "families": 96,
+      "two_member_pairs": 96,
+      "ece_10_bins": 0.1280381097458303,
+      "selected_position_counts": {
+        "0": 95,
+        "1": 70,
+        "3": 26,
+        "2": 1
+      }
+    },
+    {
+      "by_kind": {
+        "all": {
+          "count": 192,
+          "correct": 136,
+          "accuracy": 0.7083333333333334,
+          "nll": 0.627994904260759,
+          "brier": 0.3774935946350599
+        },
+        "choice": {
+          "count": 64,
+          "correct": 50,
+          "accuracy": 0.78125,
+          "nll": 0.6401549412570046,
+          "brier": 0.3185600430690458
+        },
+        "noul": {
+          "count": 112,
+          "correct": 78,
+          "accuracy": 0.6964285714285714,
+          "nll": 0.5484987175203566,
+          "brier": 0.37785557496532707
+        },
+        "score": {
+          "count": 16,
+          "correct": 8,
+          "accuracy": 0.5,
+          "nll": 1.1358280634585929,
+          "brier": 0.6106939385872461
+        }
+      },
+      "contrastive_family_accuracy": 0.4583333333333333,
+      "contrastive_pair_accuracy": 0.4583333333333333,
+      "families": 96,
+      "two_member_pairs": 96,
+      "ece_10_bins": 0.12115933125217757,
+      "selected_position_counts": {
+        "0": 88,
+        "1": 65,
+        "2": 24,
+        "3": 15
+      }
+    },
+    {
+      "by_kind": {
+        "all": {
+          "count": 192,
+          "correct": 144,
+          "accuracy": 0.75,
+          "nll": 0.6433568282437623,
+          "brier": 0.38604785804746305
+        },
+        "choice": {
+          "count": 64,
+          "correct": 49,
+          "accuracy": 0.765625,
+          "nll": 0.6601959164405703,
+          "brier": 0.34340803808956444
+        },
+        "noul": {
+          "count": 112,
+          "correct": 86,
+          "accuracy": 0.7678571428571429,
+          "nll": 0.5373992645333476,
+          "brier": 0.36707623685358437
+        },
+        "score": {
+          "count": 16,
+          "correct": 9,
+          "accuracy": 0.5625,
+          "nll": 1.3177034214294334,
+          "brier": 0.6894084862362082
+        }
+      },
+      "contrastive_family_accuracy": 0.5416666666666666,
+      "contrastive_pair_accuracy": 0.5416666666666666,
+      "families": 96,
+      "two_member_pairs": 96,
+      "ece_10_bins": 0.11485813433925307,
+      "selected_position_counts": {
+        "0": 84,
+        "1": 65,
+        "3": 23,
+        "2": 20
+      }
+    }
+  ],
+  "temperature": 1.02,
+  "test": [
+    {
+      "raw": {
+        "by_kind": {
+          "all": {
+            "count": 192,
+            "correct": 122,
+            "accuracy": 0.6354166666666666,
+            "nll": 0.6867726298675074,
+            "brier": 0.405270984097649
+          },
+          "choice": {
+            "count": 64,
+            "correct": 48,
+            "accuracy": 0.75,
+            "nll": 0.7195285947326097,
+            "brier": 0.33627676771914994
+          },
+          "noul": {
+            "count": 112,
+            "correct": 70,
+            "accuracy": 0.625,
+            "nll": 0.5766614997020937,
+            "brier": 0.4049161983896917
+          },
+          "score": {
+            "count": 16,
+            "correct": 4,
+            "accuracy": 0.25,
+            "nll": 1.326526681564995,
+            "brier": 0.6837313495673467
+          }
+        },
+        "contrastive_family_accuracy": 0.3541666666666667,
+        "contrastive_pair_accuracy": 0.3541666666666667,
+        "families": 96,
+        "two_member_pairs": 96,
+        "ece_10_bins": 0.10199397150427103,
+        "selected_position_counts": {
+          "0": 96,
+          "1": 68,
+          "3": 27,
+          "2": 1
+        }
+      },
+      "calibrated": {
+        "by_kind": {
+          "all": {
+            "count": 192,
+            "correct": 122,
+            "accuracy": 0.6354166666666666,
+            "nll": 0.6867227615026602,
+            "brier": 0.40537179455462313
+          },
+          "choice": {
+            "count": 64,
+            "correct": 48,
+            "accuracy": 0.75,
+            "nll": 0.7198801936877718,
+            "brier": 0.33713846273876646
+          },
+          "noul": {
+            "count": 112,
+            "correct": 70,
+            "accuracy": 0.625,
+            "nll": 0.5768454227601926,
+            "brier": 0.4046804968429134
+          },
+          "score": {
+            "count": 16,
+            "correct": 4,
+            "accuracy": 0.25,
+            "nll": 1.323234403959486,
+            "brier": 0.6831442058000179
+          }
+        },
+        "contrastive_family_accuracy": 0.3541666666666667,
+        "contrastive_pair_accuracy": 0.3541666666666667,
+        "families": 96,
+        "two_member_pairs": 96,
+        "ece_10_bins": 0.08135006003772986,
+        "selected_position_counts": {
+          "0": 96,
+          "1": 68,
+          "3": 27,
+          "2": 1
+        }
+      }
+    },
+    {
+      "raw": {
+        "by_kind": {
+          "all": {
+            "count": 192,
+            "correct": 135,
+            "accuracy": 0.703125,
+            "nll": 0.6330155568299412,
+            "brier": 0.3850660326099116
+          },
+          "choice": {
+            "count": 64,
+            "correct": 52,
+            "accuracy": 0.8125,
+            "nll": 0.5861837997651493,
+            "brier": 0.2869721762196173
+          },
+          "noul": {
+            "count": 112,
+            "correct": 78,
+            "accuracy": 0.6964285714285714,
+            "nll": 0.5667144184965992,
+            "brier": 0.3950461327365227
+          },
+          "score": {
+            "count": 16,
+            "correct": 5,
+            "accuracy": 0.3125,
+            "nll": 1.284450553422502,
+            "brier": 0.7075807572848117
+          }
+        },
+        "contrastive_family_accuracy": 0.4791666666666667,
+        "contrastive_pair_accuracy": 0.4791666666666667,
+        "families": 96,
+        "two_member_pairs": 96,
+        "ece_10_bins": 0.08533546716595686,
+        "selected_position_counts": {
+          "0": 76,
+          "1": 77,
+          "3": 20,
+          "2": 19
+        }
+      },
+      "calibrated": {
+        "by_kind": {
+          "all": {
+            "count": 192,
+            "correct": 135,
+            "accuracy": 0.703125,
+            "nll": 0.6344299133320286,
+            "brier": 0.3856057668791763
+          },
+          "choice": {
+            "count": 64,
+            "correct": 52,
+            "accuracy": 0.8125,
+            "nll": 0.5898893294893216,
+            "brier": 0.2887025836590552
+          },
+          "noul": {
+            "count": 112,
+            "correct": 78,
+            "accuracy": 0.6964285714285714,
+            "nll": 0.567208587687321,
+            "brier": 0.3951674727228669
+          },
+          "score": {
+            "count": 16,
+            "correct": 5,
+            "accuracy": 0.3125,
+            "nll": 1.2831415282158098,
+            "brier": 0.706286558853826
+          }
+        },
+        "contrastive_family_accuracy": 0.4791666666666667,
+        "contrastive_pair_accuracy": 0.4791666666666667,
+        "families": 96,
+        "two_member_pairs": 96,
+        "ece_10_bins": 0.08659771540131668,
+        "selected_position_counts": {
+          "0": 76,
+          "1": 77,
+          "3": 20,
+          "2": 19
+        }
+      }
+    }
+  ],
+  "training_compute_seconds": 381.4179560416378,
+  "wall_seconds": 1444.1741698752157,
+  "limitations": [
+    "Synthetic deterministic banking policies",
+    "Single seed",
+    "No human-reviewed test",
+    "Calibration fitted only on synthetic validation",
+    "JevBench excluded from training and selection"
+  ]
+}

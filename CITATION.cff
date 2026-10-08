@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+title: "Qwen RLCD / Jev-like decision-model experiments"
+message: "If you use these experiments, please cite this repository and the upstream projects listed in THIRD_PARTY.md."
+type: software
+authors:
+  - family-names: Jain
+    given-names: Saurabh
+year: 2026
+license: MIT

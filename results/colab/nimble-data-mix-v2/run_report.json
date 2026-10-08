@@ -1,0 +1,73 @@
+{
+  "before_original": {
+    "all": {
+      "count": 324,
+      "correct": 215,
+      "accuracy": 0.6635802469135802
+    }
+  },
+  "after_original": {
+    "all": {
+      "count": 324,
+      "correct": 282,
+      "accuracy": 0.8703703703703703,
+      "nll": 0.39385020210761,
+      "brier": 0.1867278135901986
+    },
+    "choice": {
+      "count": 146,
+      "correct": 126,
+      "accuracy": 0.863013698630137,
+      "nll": 0.4886157679936524,
+      "brier": 0.2158615703983169
+    },
+    "noul": {
+      "count": 114,
+      "correct": 111,
+      "accuracy": 0.9736842105263158,
+      "nll": 0.10889863073525519,
+      "brier": 0.039870821984185165
+    },
+    "score": {
+      "count": 64,
+      "correct": 45,
+      "accuracy": 0.703125,
+      "nll": 0.685236241437083,
+      "brier": 0.3818554471698902,
+      "score_absolute_error": 0.27365215597960196
+    }
+  },
+  "before_gap": {
+    "all": {
+      "count": 480,
+      "correct": 246,
+      "accuracy": 0.5125
+    }
+  },
+  "after_gap": {
+    "all": {
+      "count": 480,
+      "correct": 420,
+      "accuracy": 0.875,
+      "nll": 0.19262235248608525,
+      "brier": 0.14178631176629206
+    },
+    "choice": {
+      "count": 480,
+      "correct": 420,
+      "accuracy": 0.875,
+      "nll": 0.19262235248608525,
+      "brier": 0.14178631176629206
+    }
+  },
+  "training": {
+    "train_runtime": 1606.6889,
+    "train_samples_per_second": 2.38,
+    "train_steps_per_second": 0.298,
+    "total_flos": 1.2014251517028614e+17,
+    "train_loss": 0.18144979362208474,
+    "epoch": 1.0
+  },
+  "wall_seconds": 1607.90049425,
+  "peak_gpu_allocated_gib": 20.33463716506958
+}

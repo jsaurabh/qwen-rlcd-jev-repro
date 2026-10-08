@@ -1,0 +1,124 @@
+{
+  "status": "complete",
+  "steps": 1533,
+  "examples_seen": 49056,
+  "temperature": 1.1146459747918955,
+  "development": {
+    "count": 512,
+    "accuracy": 0.900390625,
+    "ece": 0.031675420684849895,
+    "brier": 0.15264363000315903,
+    "nll": 0.34405377431325007,
+    "reliability": [
+      {
+        "lower": 0.0,
+        "upper": 0.06666666666666667,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lower": 0.06666666666666667,
+        "upper": 0.13333333333333333,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lower": 0.13333333333333333,
+        "upper": 0.2,
+        "count": 0,
+        "confidence": null,
+        "accuracy": null
+      },
+      {
+        "lower": 0.2,
+        "upper": 0.26666666666666666,
+        "count": 3,
+        "confidence": 0.24755635335030787,
+        "accuracy": 0.0
+      },
+      {
+        "lower": 0.26666666666666666,
+        "upper": 0.3333333333333333,
+        "count": 1,
+        "confidence": 0.31199076417541916,
+        "accuracy": 1.0
+      },
+      {
+        "lower": 0.3333333333333333,
+        "upper": 0.4,
+        "count": 5,
+        "confidence": 0.3737447896124261,
+        "accuracy": 0.0
+      },
+      {
+        "lower": 0.4,
+        "upper": 0.4666666666666667,
+        "count": 5,
+        "confidence": 0.45217774304007685,
+        "accuracy": 0.6
+      },
+      {
+        "lower": 0.4666666666666667,
+        "upper": 0.5333333333333333,
+        "count": 14,
+        "confidence": 0.501152578989322,
+        "accuracy": 0.5
+      },
+      {
+        "lower": 0.5333333333333333,
+        "upper": 0.6,
+        "count": 15,
+        "confidence": 0.5609357044066333,
+        "accuracy": 0.5333333333333333
+      },
+      {
+        "lower": 0.6,
+        "upper": 0.6666666666666666,
+        "count": 15,
+        "confidence": 0.6307348680613833,
+        "accuracy": 0.5333333333333333
+      },
+      {
+        "lower": 0.6666666666666666,
+        "upper": 0.7333333333333333,
+        "count": 11,
+        "confidence": 0.6984970894644319,
+        "accuracy": 0.8181818181818182
+      },
+      {
+        "lower": 0.7333333333333333,
+        "upper": 0.8,
+        "count": 23,
+        "confidence": 0.7708079285287894,
+        "accuracy": 0.9565217391304348
+      },
+      {
+        "lower": 0.8,
+        "upper": 0.8666666666666667,
+        "count": 32,
+        "confidence": 0.8327174651628555,
+        "accuracy": 0.875
+      },
+      {
+        "lower": 0.8666666666666667,
+        "upper": 0.9333333333333333,
+        "count": 41,
+        "confidence": 0.9047436791165,
+        "accuracy": 0.9024390243902439
+      },
+      {
+        "lower": 0.9333333333333333,
+        "upper": 1.0,
+        "count": 347,
+        "confidence": 0.9834369612413283,
+        "accuracy": 0.9740634005763689
+      }
+    ],
+    "zero_probability_count": 0
+  },
+  "wall_seconds": 11786.362639553,
+  "peak_gpu_allocated_gib": 52.433576583862305,
+  "last_loss": 0.509005295985844
+}

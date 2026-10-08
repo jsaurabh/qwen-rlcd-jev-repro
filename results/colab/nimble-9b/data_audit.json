@@ -1,0 +1,25 @@
+{
+  "training_rows": 2676,
+  "training_groups": 1338,
+  "training_families": 34,
+  "validation_rows": 324,
+  "token_records_reconstructed": 2676,
+  "training_fingerprint": "5bbe9310e7f351d9aacb33dc4ebb9dc172408731edbda2fe9cea9313d696fea5",
+  "validation_fingerprint": "286a918b9882581aca3d87d3e65efbf0d6d8294cc0afe755b53d7262c0a54157",
+  "training_tokens_fingerprint": "9ce7cf34d35a1adaf6517e36364b1a75ff1cd55c4fa5963e54787a0d122e3f08",
+  "validation_order": "original inference choice order; no shuffling",
+  "train_max_tokens": 1098,
+  "validation_max_tokens": 903,
+  "training_kinds": {
+    "choice": 856,
+    "noul": 888,
+    "score": 932
+  },
+  "validation_kinds": {
+    "choice": 146,
+    "noul": 114,
+    "score": 64
+  },
+  "heldout_family_overlap": false,
+  "test_split_used": false
+}

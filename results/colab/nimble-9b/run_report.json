@@ -1,0 +1,82 @@
+{
+  "before": {
+    "all": {
+      "count": 324,
+      "correct": 215,
+      "accuracy": 0.6635802469135802,
+      "nll": 1.1008020091140678,
+      "brier": 0.5504328789642234
+    },
+    "choice": {
+      "count": 146,
+      "correct": 87,
+      "accuracy": 0.5958904109589042,
+      "nll": 1.4679929314205402,
+      "brier": 0.6917490654644194
+    },
+    "noul": {
+      "count": 114,
+      "correct": 96,
+      "accuracy": 0.8421052631578947,
+      "nll": 0.4618253890337531,
+      "brier": 0.26814040793645116
+    },
+    "score": {
+      "count": 64,
+      "correct": 32,
+      "accuracy": 0.5,
+      "nll": 1.4013248221204888,
+      "brier": 0.7308887925288705,
+      "score_absolute_error": 0.5753631105624214
+    }
+  },
+  "after": {
+    "all": {
+      "count": 324,
+      "correct": 284,
+      "accuracy": 0.8765432098765432,
+      "nll": 0.45845370567195975,
+      "brier": 0.21033013647827764
+    },
+    "choice": {
+      "count": 146,
+      "correct": 126,
+      "accuracy": 0.863013698630137,
+      "nll": 0.5506890883669434,
+      "brier": 0.23410134290393422
+    },
+    "noul": {
+      "count": 114,
+      "correct": 112,
+      "accuracy": 0.9824561403508771,
+      "nll": 0.1262323514099628,
+      "brier": 0.040227653551911415
+    },
+    "score": {
+      "count": 64,
+      "correct": 46,
+      "accuracy": 0.71875,
+      "nll": 0.8398110261782105,
+      "brier": 0.4590971195323385,
+      "score_absolute_error": 0.3187127758600385
+    }
+  },
+  "training": {
+    "train_runtime": 1982.8069,
+    "train_samples_per_second": 4.055,
+    "train_steps_per_second": 0.507,
+    "total_flos": 8.810345864664634e+16,
+    "train_loss": 0.5944133044276109,
+    "epoch": 1.0
+  },
+  "optimizer_steps": 335,
+  "training_wall_seconds": 1983.2070695609998,
+  "peak_gpu_allocated_gib": 20.33461904525757,
+  "limitations": [
+    "Model-generated, non-human-reviewed labels",
+    "Only 324 exploratory validation examples",
+    "Test split not used",
+    "Fixed epoch count; no outer-evaluation checkpoint selection; consult run plan for recipe provenance",
+    "Schema classification data, not the original MiniCheck curriculum"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "eval_rows": 480,
+  "families": [
+    "numeric",
+    "policy",
+    "probability",
+    "temporal"
+  ],
+  "human_reviewed": false,
+  "labels": "deterministic_rule_engine",
+  "pairs": 1200,
+  "pipeline": "gap-curriculum-v1",
+  "rows": 2400,
+  "seed": 20260921,
+  "sha256": "1abba5cbca27807829aa08a0c33427762341f7378034fe7832a6668d1ae4f7c2",
+  "train_rows": 1920
+}

@@ -1,0 +1,45 @@
+{
+  "reviewed_date": "2026-10-07",
+  "scope": "Independent public reconstruction; no TypeSafe model weights, architecture, training data, or private labels",
+  "sources": {
+    "qwen_rlcd": {
+      "url": "https://huggingface.co/harshatheg/Qwen-2.5-1B-RLCD",
+      "commit": "2af86848be75847ccb3553b0941cc51d6ef7e4e9"
+    },
+    "nimble": {
+      "url": "https://github.com/bespokelabsai/nimble",
+      "commit": "f136b3f75721fda4ea961f73993cc50b08488835"
+    },
+    "jevbench": {
+      "url": "https://github.com/fstandhartinger/jevbench",
+      "commit": "5e95f23cbb7be098a9061fea924c4421620ab1a5"
+    },
+    "autojev": {
+      "url": "https://github.com/denis-pplx/autojev",
+      "commit": "ee63c1515980491a742f0bd0685c8dc5ca1f00c3"
+    }
+  },
+  "models": {
+    "mlx_qwen_0_5b_4bit": {
+      "id": "mlx-community/Qwen2.5-0.5B-Instruct-4bit",
+      "revision": "a5339a4131f135d0fdc6a5c8b5bbed2753bbe0f3"
+    },
+    "mlx_qwen_1_5b_4bit": {
+      "id": "mlx-community/Qwen2.5-1.5B-Instruct-4bit",
+      "revision": "8b403126fc14f14cfc99bb4cfa72ecbc129ea677"
+    },
+    "qwen_3_5_9b": {
+      "id": "Qwen/Qwen3.5-9B",
+      "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a"
+    },
+    "qwen_3_8_27b": {
+      "id": "Qwen/Qwen3.8-27B",
+      "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0"
+    }
+  },
+  "datasets": {
+    "gap_curriculum": "data/jev_gap_curriculum_v1/manifest.json",
+    "mlx_frozen_splits": "data/mlx/*/manifest.json"
+  },
+  "weights_policy": "Base weights, adapters, readouts, and optimizer state are not committed to Git. Setup scripts download bases; training scripts regenerate adapters."
+}

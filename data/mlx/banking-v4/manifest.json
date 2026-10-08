@@ -1,0 +1,104 @@
+{
+  "train": {
+    "rows": 768,
+    "pairs": 384,
+    "sha256": "67ff23cbb0935b776e62c1c3b858022f60a4c3bc9b802f8b74c33a786ff6e6aa",
+    "tasks": {
+      "authorization": 64,
+      "authorization_negative": 64,
+      "safe_to_release": 64,
+      "missing_evidence": 64,
+      "manual_exception": 64,
+      "route_unknown": 64,
+      "route_operations": 64,
+      "adequacy": 64,
+      "trap": 64,
+      "multi_hop": 64,
+      "temporal": 64,
+      "long_policy": 64
+    },
+    "targets": {
+      "False": 224,
+      "True": 224,
+      "unknown": 64,
+      "approve": 64,
+      "manual_review": 16,
+      "payments": 32,
+      "fraud": 32,
+      "operations": 32,
+      "0": 16,
+      "deny": 16,
+      "1": 16,
+      "2": 16,
+      "3": 16
+    }
+  },
+  "validation": {
+    "rows": 192,
+    "pairs": 96,
+    "sha256": "b3bdaaf458a9b447cc03d55c6bca2c7a0d8ab8ef2c97566e1a165cda9926cf64",
+    "tasks": {
+      "authorization": 16,
+      "authorization_negative": 16,
+      "safe_to_release": 16,
+      "missing_evidence": 16,
+      "manual_exception": 16,
+      "route_unknown": 16,
+      "route_operations": 16,
+      "adequacy": 16,
+      "trap": 16,
+      "multi_hop": 16,
+      "temporal": 16,
+      "long_policy": 16
+    },
+    "targets": {
+      "False": 56,
+      "True": 56,
+      "unknown": 16,
+      "approve": 16,
+      "manual_review": 4,
+      "payments": 8,
+      "fraud": 8,
+      "operations": 8,
+      "0": 4,
+      "deny": 4,
+      "1": 4,
+      "2": 4,
+      "3": 4
+    }
+  },
+  "test": {
+    "rows": 192,
+    "pairs": 96,
+    "sha256": "b4d28618f4989d0d4c71883df4dea98c8f67d89f4f3fb9b3991eb1a8d0d9bbdd",
+    "tasks": {
+      "authorization": 16,
+      "authorization_negative": 16,
+      "safe_to_release": 16,
+      "missing_evidence": 16,
+      "manual_exception": 16,
+      "route_unknown": 16,
+      "route_operations": 16,
+      "adequacy": 16,
+      "trap": 16,
+      "multi_hop": 16,
+      "temporal": 16,
+      "long_policy": 16
+    },
+    "targets": {
+      "False": 56,
+      "True": 56,
+      "unknown": 16,
+      "approve": 16,
+      "manual_review": 4,
+      "payments": 8,
+      "fraud": 8,
+      "operations": 8,
+      "0": 4,
+      "deny": 4,
+      "1": 4,
+      "2": 4,
+      "3": 4
+    }
+  }
+}

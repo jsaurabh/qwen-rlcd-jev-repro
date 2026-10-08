@@ -1,0 +1,19 @@
+{
+  "format_version": 1,
+  "architecture": "autojev-readout+lora",
+  "base_model": "Qwen/Qwen3.8-27B",
+  "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "lora_rank": 16,
+  "lora_alpha": 32,
+  "lora_dropout": 0.05,
+  "max_length": 512,
+  "micro_batch": 4,
+  "grad_accum": 8,
+  "seed": 20260922,
+  "train_rows_available": 49039,
+  "dev_rows": 512,
+  "temperature_rows": 512,
+  "start_step": 300,
+  "resume_artifact": "/content/drive/MyDrive/qwen-rlcd-jev/autojev-27b/full-v4/checkpoint-00300",
+  "trainable_parameters": 80997376
+}

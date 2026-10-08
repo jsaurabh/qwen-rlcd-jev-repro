@@ -1,0 +1,161 @@
+{
+  "config": {
+    "model": "models/qwen-1.5b-4bit",
+    "out": "runs/faithful-v1",
+    "adapter": null,
+    "state": null,
+    "steps": 80,
+    "accum": 4,
+    "lr": 5e-05,
+    "seed": 17
+  },
+  "schema": [
+    {
+      "name": "department",
+      "type": "choice",
+      "question": "Which team should handle this case? Payments handles transfers, charges, and payment status. Account support handles access and account servicing. Fraud review handles suspected unauthorized activity.",
+      "choices": [
+        "payments",
+        "account_support",
+        "fraud_review"
+      ]
+    },
+    {
+      "name": "urgency",
+      "type": "score",
+      "question": "Rate urgency: 0 = routine inquiry with no immediate disruption; 1 = access or payment disruption needing prompt attention; 2 = suspected ongoing unauthorized activity or imminent loss.",
+      "choices": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "name": "escalate",
+      "type": "noul",
+      "question": "Does this case need human review because it involves suspected fraud, disputed authorization, conflicting information, or an exception to the stated bank policy?",
+      "choices": [
+        false,
+        true
+      ]
+    }
+  ],
+  "datasets": {
+    "train": {
+      "sha256": "34f1203b1bb169a0bcc6f73c03be90356a655600b70a2fdaa1492e24aa272ad9",
+      "cases": 96,
+      "scenario_groups": 24
+    },
+    "validation": {
+      "sha256": "1f9067132097140da879e784a82fe306833a3b1f6ea5437755b93be266d44ec4",
+      "cases": 24,
+      "scenario_groups": 12
+    },
+    "test": {
+      "sha256": "bffba973c8e06101d12002aa7b94020cff48b4383932e6d2a990f1fa98f9289a",
+      "cases": 60,
+      "scenario_groups": 30
+    }
+  },
+  "parity_before": {
+    "cases": 8,
+    "prefix_and_suffix_tokens_exact": true,
+    "wrapper_answers_and_probabilities_exact": true,
+    "max_differentiable_probability_error": 4.886691123247148e-05,
+    "tolerance": 0.0002
+  },
+  "upstream_base": {
+    "cases": 60,
+    "groups": 30,
+    "decisions": 180,
+    "correct": 137,
+    "accuracy": 0.7611111111111111,
+    "nll": 0.7067269984772246,
+    "brier": 0.3779909735106234,
+    "ece_5_bins": 0.08222754898728113,
+    "field_accuracy": {
+      "department": 0.5666666666666667,
+      "urgency": 0.8333333333333334,
+      "escalate": 0.8833333333333333
+    },
+    "median_ms": 180.4791041649878
+  },
+  "old_letter_base": {
+    "cases": 60,
+    "groups": 30,
+    "decisions": 180,
+    "correct": 97,
+    "accuracy": 0.5388888888888889,
+    "nll": 0.9708464587474295,
+    "brier": 0.6219986183450016,
+    "ece_5_bins": 0.16176176071166992,
+    "field_accuracy": {
+      "department": 0.48333333333333334,
+      "urgency": 0.6,
+      "escalate": 0.5333333333333333
+    },
+    "median_ms": 201.5260204207152
+  },
+  "parity_after": {
+    "cases": 8,
+    "prefix_and_suffix_tokens_exact": true,
+    "wrapper_answers_and_probabilities_exact": true,
+    "max_differentiable_probability_error": 9.118395336205065e-05,
+    "tolerance": 0.0002
+  },
+  "trained": {
+    "cases": 60,
+    "groups": 30,
+    "decisions": 180,
+    "correct": 149,
+    "accuracy": 0.8277777777777777,
+    "nll": 0.49556696855795634,
+    "brier": 0.2800376918235888,
+    "ece_5_bins": 0.08293248761574158,
+    "field_accuracy": {
+      "department": 0.8666666666666667,
+      "urgency": 0.75,
+      "escalate": 0.8666666666666667
+    },
+    "median_ms": 185.93258340843022
+  },
+  "trained_temperature": {
+    "cases": 60,
+    "groups": 30,
+    "decisions": 180,
+    "correct": 149,
+    "accuracy": 0.8277777777777777,
+    "nll": 0.4875012462215444,
+    "brier": 0.2787414335497578,
+    "ece_5_bins": 0.07882070556274598,
+    "field_accuracy": {
+      "department": 0.8666666666666667,
+      "urgency": 0.75,
+      "escalate": 0.8666666666666667
+    },
+    "median_ms": 179.29152096621692
+  },
+  "selection": {
+    "best_step": 80,
+    "validation_nll": 0.3221294123423945,
+    "temperature": 1.0352649238413774,
+    "test_used_for_selection": false
+  },
+  "training": {
+    "updates": 80,
+    "accumulation": 4,
+    "trainable_parameters": 77824,
+    "compute_seconds": 67.24844174645841,
+    "including_validation_seconds": 111.02690808288753
+  },
+  "wall_seconds": 147.17287133308128,
+  "peak_mlx_gb": 1.193897392,
+  "upstream_commit": "2af86848be75847ccb3553b0941cc51d6ef7e4e9",
+  "source_sha256": {
+    "faithful_rlcd.py": "e9263d7dde0cc18b1ff78fdf71f878448ce5a811bd483d612f6654d69fd83ff8",
+    "banking_data.py": "fd2d92ee9f32f4a399b79346ca0fb2ecc8901ead222290cb5ee3a3fe2f6b7be4",
+    "upstream/core/engine_mlx.py": "9429d1f3df66133c5b6675c8295680a6302c366f364a2f2e9e6365157df993b2",
+    "upstream/core/schema.py": "5fdfa2ffe4fd83c64e98331802d4a0f0858aa85197380cfc1ff6a39100f73232"
+  },
+  "caveat": "One seed, hand-authored synthetic rubric, correlated wording variants; no production or general calibration claim."
+}

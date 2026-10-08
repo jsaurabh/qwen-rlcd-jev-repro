@@ -1,0 +1,31 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Downloaded model and third-party source trees are recreated by setup scripts.
+models/
+upstream/
+reference-*/
+
+# Generated training state. Curated, small reports live under results/.
+runs/
+colab-results/
+checkpoints/
+outputs/
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.tar
+*.tar.gz
+*.zip
+*.log
+
+# Colab/Drive scratch files.
+drive/
+content/

@@ -1,0 +1,17 @@
+{
+  "train": {
+    "sha256": "34f1203b1bb169a0bcc6f73c03be90356a655600b70a2fdaa1492e24aa272ad9",
+    "cases": 96,
+    "scenario_groups": 24
+  },
+  "validation": {
+    "sha256": "1f9067132097140da879e784a82fe306833a3b1f6ea5437755b93be266d44ec4",
+    "cases": 24,
+    "scenario_groups": 12
+  },
+  "test": {
+    "sha256": "bffba973c8e06101d12002aa7b94020cff48b4383932e6d2a990f1fa98f9289a",
+    "cases": 60,
+    "scenario_groups": 30
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "config": {
+    "model": "models/qwen-0.5b-4bit",
+    "out": "/tmp/qwen-rlcd-jev-public-smoke",
+    "steps": 12,
+    "rl_steps": 4,
+    "accum": 4,
+    "lora_layers": 4,
+    "lr": 0.0002,
+    "seed": 7,
+    "train_size": 32,
+    "eval_size": 8,
+    "max_length": 256,
+    "adapter": null,
+    "state": null,
+    "compare_jev": false,
+    "jev_model": "jev-latest",
+    "local_results": null,
+    "compare_out": "runs/hf-adapter-jev-live/comparison.json"
+  },
+  "schema": [
+    {
+      "name": "department",
+      "type": "choice",
+      "question": "Which team should handle this case? Payments handles transfers, charges, and payment status. Account support handles access and account servicing. Fraud review handles suspected unauthorized activity.",
+      "choices": [
+        "payments",
+        "account_support",
+        "fraud_review"
+      ]
+    },
+    {
+      "name": "urgency",
+      "type": "score",
+      "question": "Rate urgency: 0 = routine inquiry with no immediate disruption; 1 = access or payment disruption needing prompt attention; 2 = suspected ongoing unauthorized activity or imminent loss.",
+      "choices": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "name": "escalate",
+      "type": "noul",
+      "question": "Does this case need human review because it involves suspected fraud, disputed authorization, conflicting information, or an exception to the stated bank policy?",
+      "choices": [
+        false,
+        true
+      ]
+    }
+  ],
+  "checks_before": {
+    "cached_vs_full_max_probability_error": 0.0038759708404541016,
+    "other_suffix_independence_probability_error": 0.004040896892547607,
+    "proper_reward_gradient_identity": true,
+    "typed_outputs_and_normalization": true
+  },
+  "before": {
+    "decisions": 24,
+    "accuracy_sampled": 0.4166666666666667,
+    "nll_sampled": 1.2183577512947277,
+    "brier_sampled": 0.784521548541877,
+    "ece_5_bins_sampled": 0.3154537614608021,
+    "cross_entropy_known_posterior": 1.2230249062426444,
+    "squared_error_known_posterior": 0.42478428808254803
+  },
+  "training": {
+    "adapter_update_l2": 0.7560920201875103,
+    "seconds": 5.23281537508592,
+    "trainable_parameters": 45056,
+    "updates": 16
+  },
+  "checks_after": {
+    "cached_vs_full_max_probability_error": 0.0037171244621276855,
+    "other_suffix_independence_probability_error": 0.005811929702758789,
+    "proper_reward_gradient_identity": true,
+    "typed_outputs_and_normalization": true,
+    "adapter_reload_max_logit_error": 0.0
+  },
+  "after": {
+    "decisions": 24,
+    "accuracy_sampled": 0.4166666666666667,
+    "nll_sampled": 1.4794085327002329,
+    "brier_sampled": 0.8241954888468905,
+    "ece_5_bins_sampled": 0.3496507879664342,
+    "cross_entropy_known_posterior": 1.410292321762733,
+    "squared_error_known_posterior": 0.43697085117531637
+  },
+  "after_temperature": {
+    "decisions": 24,
+    "accuracy_sampled": 0.4166666666666667,
+    "nll_sampled": 0.9799487445089851,
+    "brier_sampled": 0.6293302657304839,
+    "ece_5_bins_sampled": 0.11969431184850517,
+    "cross_entropy_known_posterior": 0.96266969177461,
+    "squared_error_known_posterior": 0.27511785825895757
+  },
+  "temperature": 4.0,
+  "after_supervised": {
+    "decisions": 24,
+    "accuracy_sampled": 0.5,
+    "nll_sampled": 1.3123410944219696,
+    "brier_sampled": 0.7887914093902667,
+    "ece_5_bins_sampled": 0.37485223906367193,
+    "cross_entropy_known_posterior": 1.5905474746303028,
+    "squared_error_known_posterior": 0.6038112605794554
+  },
+  "warm_three_field_inference_ms_median": 67.99170887097716,
+  "wall_seconds": 9.343905957881361,
+  "peak_mlx_gb": 0.550527398,
+  "max_prompt_tokens": 190,
+  "data_sha256": {
+    "train.jsonl": "58e98150fef4be22d829b08db871f46937a64831ef21f868c1b7a9584078a1a1",
+    "test.jsonl": "edacb3c4adee0ea51e414e1c48d96106b51cf9f0f33126c1080fb85726a0fcba",
+    "validation.jsonl": "1163505e40d32885400988fedb2a536e9c285ef015b19caca17c4b3fddeba34d"
+  },
+  "caveat": "Smoke test only; tiny related synthetic splits cannot demonstrate general calibration or Jev equivalence."
+}
