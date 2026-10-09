@@ -1,0 +1,123 @@
+{
+  "seed": 20261009,
+  "sources": {
+    "acos": {
+      "repo": "NUSTM/ACOS",
+      "revision": "45d179a3dcc6a3dedd848d81b16f2552454805fe",
+      "status": "downloaded",
+      "files": {
+        "data/Laptop-ACOS/laptop_quad_train.tsv": {
+          "local": "laptop_quad_train.tsv",
+          "sha256": "75572e18961f15d6624c037cf4ccc8964744b59a6be4249132229a4dbd967320",
+          "bytes": 359454
+        },
+        "data/Restaurant-ACOS/rest16_quad_train.tsv": {
+          "local": "rest16_quad_train.tsv",
+          "sha256": "91ced9328d5992d3715ec70d7cc08a6ccd9dea79136ffdd70556fe54b217edda",
+          "bytes": 179810
+        },
+        "README.md": {
+          "local": "README.md",
+          "sha256": "a8f3169da3e86f4a062367f670f946a38d2d3a4e6025c313371d43b91fd63bc4",
+          "bytes": 3482
+        }
+      },
+      "license_review": "Author research release; no explicit license file in pinned source. Raw data is not redistributed.",
+      "used_in_pilot": true
+    },
+    "esci": {
+      "repo": "amazon-science/esci-data",
+      "revision": "7916cdf6ab75a462e77f20ab40428a10923998d5",
+      "status": "downloaded",
+      "files": {
+        "shopping_queries_dataset/shopping_queries_dataset_examples.parquet": {
+          "local": "shopping_queries_dataset_examples.parquet",
+          "sha256": "4a735b693b4a424a6fc67f5be6e4c811495c488bbf66d02a602d308b2744263a",
+          "bytes": 51286808
+        },
+        "shopping_queries_dataset/shopping_queries_dataset_products.parquet": {
+          "local": "shopping_queries_dataset_products.parquet",
+          "sha256": "25124442d064d64b26f74082d6fa09438d679efc0c183cf28d19064a2b65a265",
+          "bytes": 1108857465
+        },
+        "LICENSE": {
+          "local": "LICENSE",
+          "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
+          "bytes": 10142
+        },
+        "README.md": {
+          "local": "README.md",
+          "sha256": "fe926f49adbb8dfd8dd7f2fbcd8cb30f6002267f17bc167f081386cc2e07aa64",
+          "bytes": 11057
+        }
+      },
+      "license_review": "Apache-2.0 LICENSE included in pinned source; raw data is not redistributed.",
+      "schemas": {
+        "shopping_queries_dataset_products.parquet": [
+          "product_id",
+          "product_title",
+          "product_description",
+          "product_bullet_point",
+          "product_brand",
+          "product_color",
+          "product_locale"
+        ],
+        "shopping_queries_dataset_examples.parquet": [
+          "example_id",
+          "query",
+          "query_id",
+          "product_id",
+          "product_locale",
+          "esci_label",
+          "small_version",
+          "large_version",
+          "split",
+          "__index_level_0__"
+        ]
+      },
+      "used_in_pilot": true
+    },
+    "numina": {
+      "repo": "AI-MO/NuminaMath-CoT",
+      "status": "downloaded",
+      "license_review": "pending",
+      "revision": "9d8d210c9f6a36c8f3cd84045668c9b7800ef517",
+      "declared_license": "apache-2.0",
+      "columns": [
+        "source",
+        "problem",
+        "solution",
+        "messages"
+      ],
+      "rows": 20000,
+      "sha256": "ac09259f95908a5f6812378495b19edc8df68d9e283321e7539118449aa0302f",
+      "used_in_pilot": false
+    },
+    "tulu": {
+      "repo": "allenai/tulu-3-sft-mixture",
+      "status": "downloaded",
+      "license_review": "pending",
+      "revision": "b14afda60f1bbebe55d5d2fa1e4df5042f97f8be",
+      "declared_license": "odc-by",
+      "columns": [
+        "id",
+        "messages",
+        "source"
+      ],
+      "rows": 10000,
+      "sha256": "52c9276c1acf0a5a860e900f553c4435c9cc9bb5df8c7003d1f9d88d1eb93ea1",
+      "used_in_pilot": false
+    },
+    "xlam": {
+      "repo": "Salesforce/xlam-function-calling-60k",
+      "status": "failed",
+      "license_review": "pending",
+      "revision": "26d14ebfe18b1f7b524bd39b404b50af5dc97866",
+      "declared_license": "cc-by-4.0",
+      "error_type": "DatasetNotFoundError",
+      "used_in_pilot": false
+    }
+  },
+  "status": "source_collection_complete",
+  "redistribution": "private inputs only; check each source terms before training/publication"
+}

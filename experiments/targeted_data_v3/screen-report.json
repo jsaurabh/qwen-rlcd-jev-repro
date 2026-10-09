@@ -1,0 +1,68 @@
+{
+  "method": "Whole normalized states and nested string fields of12+words; exact hashes and MinHash64 with exact5gram Jaccard>=.8 (first4096words for near matching). Conservative document-level removal, including cross-fold collisions. Not a proof against semantic or pretraining contamination.",
+  "positive_negative_controls": "passed",
+  "benchmark_documents": 167118,
+  "counts": {
+    "temperature": {
+      "input": 4949,
+      "benchmark_exact_document": 9,
+      "benchmark_near_document": 6,
+      "kept": 4934
+    },
+    "dev": {
+      "input": 5437,
+      "calibration_overlap": 7,
+      "benchmark_near_document": 4,
+      "benchmark_exact_document": 10,
+      "kept": 5416
+    },
+    "targeted": {
+      "summary": {
+        "input": 105428,
+        "kept": 104274,
+        "duplicate_decision": 560,
+        "benchmark_exact_document": 248,
+        "benchmark_near_document": 118,
+        "heldout_document_overlap": 228
+      },
+      "kept_by_suite": {
+        "civil_comments": 2455,
+        "aegis2": 1695,
+        "squad2": 4092,
+        "boolq": 2071,
+        "paws": 3694,
+        "vitaminc-dev": 4896,
+        "jev-gap-curriculum-v1": 688,
+        "multinli": 3745,
+        "massive-en-US": 3051,
+        "massive-de-DE": 3089,
+        "acos-quad-verification": 23971,
+        "acos-sentiment": 5392,
+        "esci-relevance": 29435,
+        "verified-code": 16000
+      }
+    },
+    "control": {
+      "summary": {
+        "input": 48847,
+        "kept": 47852,
+        "duplicate_decision": 982,
+        "heldout_document_overlap": 2,
+        "benchmark_near_document": 8,
+        "benchmark_exact_document": 3
+      },
+      "kept_by_suite": {
+        "aegis2": 2748,
+        "boolq": 3447,
+        "civil_comments": 3998,
+        "massive-de-DE": 5000,
+        "massive-en-US": 5000,
+        "multinli": 6000,
+        "paws": 5998,
+        "squad2": 6721,
+        "vitaminc-dev": 7992,
+        "jev-gap-curriculum-v1": 948
+      }
+    }
+  }
+}

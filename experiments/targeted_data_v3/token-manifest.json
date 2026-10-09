@@ -1,0 +1,104 @@
+{
+  "tokenizer_repo": "jsaurabh/qwen-decision-27b-noncausal-lora",
+  "revision": "b2eefb929a883136b3bd56ce70999fdac656ee8a",
+  "max_length": 512,
+  "filter_limit": 480,
+  "option_order": "Frozen per-example permutation seed20261009+id; trainer must not reshuffle labels afterward.",
+  "splits": {
+    "control-train": {
+      "counts": {
+        "input": 47852
+      },
+      "kept": 47852,
+      "by_suite": {
+        "aegis2": 2748,
+        "boolq": 3447,
+        "civil_comments": 3998,
+        "massive-de-DE": 5000,
+        "massive-en-US": 5000,
+        "multinli": 6000,
+        "paws": 5998,
+        "squad2": 6721,
+        "vitaminc-dev": 7992,
+        "jev-gap-curriculum-v1": 948
+      },
+      "tokens": 12820934,
+      "sha256": "05e7296d4a74c1cb3fcb713cbab5c7e0c5d66c73d4e13b71f3eade5cdf84c93b"
+    },
+    "targeted-train": {
+      "counts": {
+        "input": 104274,
+        "over_length": 11465
+      },
+      "kept": 92809,
+      "by_suite": {
+        "civil_comments": 2455,
+        "aegis2": 1695,
+        "squad2": 4092,
+        "boolq": 2071,
+        "paws": 3694,
+        "vitaminc-dev": 4896,
+        "jev-gap-curriculum-v1": 688,
+        "multinli": 3745,
+        "massive-en-US": 3051,
+        "massive-de-DE": 3089,
+        "acos-quad-verification": 23971,
+        "acos-sentiment": 5392,
+        "esci-relevance": 17970,
+        "verified-code": 16000
+      },
+      "tokens": 20601781,
+      "sha256": "2b1fec4f377c3e94f4f8e6c757a79d42152a73bca254bd34bd11591e75b95527"
+    },
+    "dev": {
+      "counts": {
+        "input": 5416,
+        "over_length": 556
+      },
+      "kept": 768,
+      "by_suite": {
+        "acos-quad-verification": 55,
+        "acos-sentiment": 55,
+        "aegis2": 55,
+        "boolq": 55,
+        "civil_comments": 55,
+        "esci-relevance": 55,
+        "massive-de-DE": 55,
+        "massive-en-US": 55,
+        "multinli": 55,
+        "paws": 55,
+        "pubmedqa": 55,
+        "squad2": 55,
+        "verified-code": 54,
+        "vitaminc-dev": 54
+      },
+      "tokens": 196502,
+      "sha256": "70c99179725a3e30605c24a89108309ee54f0a7ad4e4fbcc2fd25a16c28f56cf"
+    },
+    "temperature": {
+      "counts": {
+        "input": 4934,
+        "over_length": 559
+      },
+      "kept": 768,
+      "by_suite": {
+        "acos-quad-verification": 57,
+        "acos-sentiment": 57,
+        "aegis2": 56,
+        "boolq": 56,
+        "civil_comments": 56,
+        "esci-relevance": 56,
+        "massive-de-DE": 56,
+        "massive-en-US": 56,
+        "multinli": 56,
+        "paws": 56,
+        "pubmedqa": 38,
+        "squad2": 56,
+        "verified-code": 56,
+        "vitaminc-dev": 56
+      },
+      "tokens": 191707,
+      "sha256": "89dff519e55a4da1f5645e9b74d47b9fbde53eba73f9d5e28928e97d706d0382"
+    }
+  }
+}

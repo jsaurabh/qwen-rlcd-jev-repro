@@ -1,0 +1,33 @@
+{
+  "format_version": 1,
+  "architecture": "autojev-readout+lora",
+  "base_model": "Qwen/Qwen3.8-27B",
+  "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "lora_rank": 16,
+  "lora_alpha": 32,
+  "lora_dropout": 0.05,
+  "max_length": 512,
+  "micro_batch": 4,
+  "grad_accum": 8,
+  "seed": 20261009,
+  "attention_mode": "noncausal_full_attention",
+  "pooling": "last",
+  "data_sha256": {
+    "train": "2b1fec4f377c3e94f4f8e6c757a79d42152a73bca254bd34bd11591e75b95527",
+    "development": "70c99179725a3e30605c24a89108309ee54f0a7ad4e4fbcc2fd25a16c28f56cf",
+    "temperature": "89dff519e55a4da1f5645e9b74d47b9fbde53eba73f9d5e28928e97d706d0382"
+  },
+  "lr": 5e-05,
+  "total_steps": 283,
+  "token_budget": 2000000,
+  "planned_tokens": 1999882,
+  "plan_sha256": "8a9dd42b87afaac08c15af5f2efa3f6a760066a6abac4c187ce1ab97449bdb06",
+  "sampling": "single seeded shuffle; fixed option order; stop before token budget",
+  "lr_schedule": "5% token warmup then linear decay",
+  "train_rows_available": 92809,
+  "dev_rows": 768,
+  "temperature_rows": 768,
+  "start_step": 0,
+  "resume_artifact": null,
+  "trainable_parameters": 80997376
+}

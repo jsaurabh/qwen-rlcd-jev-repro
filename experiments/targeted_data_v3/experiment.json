@@ -1,14 +1,7 @@
 {
-  "status": "data_audit_running_training_not_started",
+  "status": "completed",
   "seed": 20261009,
   "target_examples": 100000,
-  "target_mix": {
-    "clean_existing": 0.3,
-    "sentiment_extraction_entailment": 0.25,
-    "retrieval_relevance": 0.2,
-    "verified_math_logic_code": 0.15,
-    "phishing_tool_edges": 0.1
-  },
   "comparison": "Equal non-padding training tokens, same initialization and hyperparameters; long-context changes in a separate ablation.",
   "selection": "Independent family-separated development set; separate calibration; full public suite only after recipe selection.",
   "sources_to_validate": [
@@ -24,5 +17,27 @@
     "Family-disjoint train/dev/calibration",
     "Correct candidate labels and verified distractors",
     "Tokenized-length and mixture audit"
-  ]
+  ],
+  "proposed_mix": {
+    "clean_existing": 0.3,
+    "sentiment_extraction_entailment": 0.25,
+    "retrieval_relevance": 0.2,
+    "verified_math_logic_code": 0.15,
+    "phishing_tool_edges": 0.1
+  },
+  "actual_train_rows": {
+    "control": 47852,
+    "targeted": 92809
+  },
+  "training_token_budget_per_arm": 2000000,
+  "common_dev_rows": 768,
+  "common_calibration_rows": 768,
+  "sources_not_used": [
+    "NuminaMath-CoT",
+    "Tulu-3-SFT",
+    "xLAM"
+  ],
+  "max_length": 512,
+  "input_filter_limit": 480,
+  "result": "Shared development accuracy: control81.12%, targeted86.85%; not a leaderboard evaluation."
 }
