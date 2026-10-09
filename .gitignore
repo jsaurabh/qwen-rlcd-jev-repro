@@ -29,3 +29,5 @@ outputs/
 # Colab/Drive scratch files.
 drive/
 content/
+
+colab/noncausal_27b/artifact/

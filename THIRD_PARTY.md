@@ -12,3 +12,5 @@ This repository contains original experiment code and synthetic datasets. It doe
 | [MLX-LM](https://github.com/ml-explore/mlx-lm) | Apple-Silicon model loading and LoRA primitives | versions pinned in `requirements.lock.txt` |
 
 Model repositories are downloaded separately. Review their model cards and licenses before redistribution or commercial use.
+
+The versioned `colab/noncausal_27b/autojev/` directory is an exception to the non-vendoring statement above: it contains the four frozen runtime modules needed for the published decision model. Source reference: `perplexity-ai/pplx-decider-v1.1-27b` revision `3b45dead91dfa6d95aad6b95764a606fab2bf7a6`, with local attention changes. Apache-2.0 and project MIT notices are included in that directory. No model weights or third-party dataset corpus is committed.

@@ -1,0 +1,1 @@
+Upstream AutoJev/decider source: perplexity-ai/pplx-decider-v1.1-27b, revision 3b45dead91dfa6d95aad6b95764a606fab2bf7a6 (Apache-2.0). Base model Qwen/Qwen3.8-27B (Apache-2.0). Local changes: noncausal attention experiment, LoRA training/checkpoint helpers and System One inference wrapper. Exact frozen source is included; this is not an official Perplexity model.
