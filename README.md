@@ -17,6 +17,18 @@ The common idea is to turn a decoder model into a decision model: serialize stat
 
 This is an independent reconstruction from public work. It does **not** reproduce TypeSafe's undisclosed Jev architecture, weights, or training data.
 
+## Latest: noncausal 27B decision model
+
+The independent step-1533 LoRA/readout experiment scored **57.70 on the complete Decision Index 0.3 public suite** (140,178 scoreable requests). This is not a private/Full leaderboard score or the official Perplexity checkpoint.
+
+- [Runnable code and training recipe](docs/noncausal-27b.md)
+- [Weights and processor on Hugging Face](https://huggingface.co/jsaurabh/qwen-decision-27b-noncausal-lora)
+- [Aggregate results in this repo](results/decision-index-0.3/noncausal-27b/)
+- [Complete compact prediction records](https://huggingface.co/datasets/jsaurabh/qwen-decision-27b-decision-index-0.3)
+- [Leaderboard submission PR](https://github.com/apolinario/decision-index/pull/114)
+
+Training/public-benchmark overlap has not been fully audited. The follow-up data experiment audits the saved inputs and compares a targeted mix against a control at an equal training-token budget.
+
 ## Talk deck
 
 The accompanying 21-slide technical overview is available at [`slides/jev_decision_models_balanced_technical_talk_v8.pptx`](slides/jev_decision_models_balanced_technical_talk_v8.pptx). It covers the Jev execution model, open architecture families, training and calibration, and the public benchmark results summarized below.

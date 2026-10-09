@@ -1,0 +1,26 @@
+{
+  "archive_sha256": "356ad504bbd49f55f595677fef3f90b7c1d8e79220c4f4df378682aa7f5d3921",
+  "gap_sha256": "819898ee096d50445c70263778a50dc6cb1bea03d6df6a725b2ff05ad90c7006",
+  "selection": "New deterministic 2/3 subset per suite of archived 0.75-scale text corpus; plus gap training rows. Not byte-identical to historical full-v4.",
+  "max_length": 512,
+  "filter_length": 480,
+  "seed": 20261008,
+  "splits": {
+    "train": {
+      "original": 49420,
+      "kept": 48847,
+      "sha256": "12310326e311ed65b586e5c11dd4350a9b0b34b39c35b54c80103d3a3bdf520e"
+    },
+    "dev": {
+      "original": 1497,
+      "kept": 1432,
+      "sha256": "5673ab6fef88524bdb77790615ea92e46279be754d71a506ab97566568bd47c0"
+    },
+    "temperature": {
+      "original": 983,
+      "kept": 937,
+      "sha256": "9963bde641a6d8a16e4f3a438c1ed44134f38c094a7d9c4bab5ad8af1de9ca5f"
+    }
+  },
+  "family_overlap": 0
+}

@@ -1,0 +1,28 @@
+{
+  "status": "data_audit_running_training_not_started",
+  "seed": 20261009,
+  "target_examples": 100000,
+  "target_mix": {
+    "clean_existing": 0.3,
+    "sentiment_extraction_entailment": 0.25,
+    "retrieval_relevance": 0.2,
+    "verified_math_logic_code": 0.15,
+    "phishing_tool_edges": 0.1
+  },
+  "comparison": "Equal non-padding training tokens, same initialization and hyperparameters; long-context changes in a separate ablation.",
+  "selection": "Independent family-separated development set; separate calibration; full public suite only after recipe selection.",
+  "sources_to_validate": [
+    "NUSTM/ACOS training splits",
+    "amazon-science/esci-data training split",
+    "AI-MO/NuminaMath-CoT vetted subset",
+    "allenai/tulu-3-sft-mixture vetted subset",
+    "Salesforce/xlam-function-calling-60k subject to access and terms"
+  ],
+  "gates": [
+    "Exact/near benchmark state overlap screen",
+    "Source-level licenses and stable revisions",
+    "Family-disjoint train/dev/calibration",
+    "Correct candidate labels and verified distractors",
+    "Tokenized-length and mixture audit"
+  ]
+}

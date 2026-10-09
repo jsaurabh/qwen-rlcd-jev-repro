@@ -1,0 +1,8 @@
+{
+  "model_repo": "jsaurabh/qwen-decision-27b-noncausal-lora",
+  "model_revision": "b2eefb929a883136b3bd56ce70999fdac656ee8a",
+  "results_repo": "jsaurabh/qwen-decision-27b-decision-index-0.3",
+  "results_revision": "11a97b664e02ceb8428cdc1e42a2ce7905c152b3",
+  "public": true,
+  "submission_pr": "https://github.com/apolinario/decision-index/pull/114"
+}
