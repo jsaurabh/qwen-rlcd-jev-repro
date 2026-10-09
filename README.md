@@ -27,7 +27,7 @@ The independent step-1533 LoRA/readout experiment scored **57.70 on the complete
 - [Complete compact prediction records](https://huggingface.co/datasets/jsaurabh/qwen-decision-27b-decision-index-0.3)
 - [Leaderboard submission PR](https://github.com/apolinario/decision-index/pull/114)
 
-Training/public-benchmark overlap has not been fully audited. The follow-up data experiment audits the saved inputs and compares a targeted mix against a control at an equal training-token budget.
+Training/public-benchmark overlap has not been fully audited. The [completed data-mixture pilot](results/targeted-data-v3/README.md) screens saved inputs and compares an expanded mix against a control at an equal training-token budget. Shared development accuracy improved from 81.12% to 86.85%; this is not a new leaderboard result. [Recipe and provenance](experiments/targeted_data_v3/README.md).
 
 ## Talk deck
 
