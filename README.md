@@ -29,6 +29,8 @@ The independent step-1533 LoRA/readout experiment scored **57.70 on the complete
 
 Training/public-benchmark overlap has not been fully audited. The [completed data-mixture pilot](results/targeted-data-v3/README.md) screens saved inputs and compares an expanded mix against a control at an equal training-token budget. Shared development accuracy improved from 81.12% to 86.85%; this is not a new leaderboard result. [Recipe and provenance](experiments/targeted_data_v3/README.md).
 
+A subsequent [matched RL continuation pilot](results/rl-decisions-v1/README.md) did **not** improve the expanded-data checkpoint: 86.20% accuracy for RL, 86.72% for continued SFT, and 86.85% before continuation. Code, configurations and the negative result are preserved for reproduction.
+
 ## Talk deck
 
 The accompanying 21-slide technical overview is available at [`slides/jev_decision_models_balanced_technical_talk_v8.pptx`](slides/jev_decision_models_balanced_technical_talk_v8.pptx). It covers the Jev execution model, open architecture families, training and calibration, and the public benchmark results summarized below.
