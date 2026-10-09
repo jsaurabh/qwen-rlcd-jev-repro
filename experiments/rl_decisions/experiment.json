@@ -1,0 +1,34 @@
+{
+  "status": "complete_negative_result",
+  "initialization": "Completed targeted-data-v3 selected LoRA and readout, fixed for both arms",
+  "seed": 20261010,
+  "arms": {
+    "continued_sft": "Candidate cross-entropy",
+    "rl_hybrid": "Negative exact expected correctness reward + 0.05 forward KL to frozen starting policy + 0.25 cross-entropy"
+  },
+  "rl_interpretation": "One-step contextual-bandit policy optimization, enumerating all finite actions instead of sampling. Not a replication of undisclosed Matilda RL and not claimed RLCD.",
+  "token_budget_per_arm": 250000,
+  "max_length": 512,
+  "micro_batch": 4,
+  "grad_accum": 8,
+  "learning_rate": 1e-05,
+  "evaluation": "Same frozen 768 development cases; temperature refit on separate 768 calibration cases. Compare accuracy, NLL, Brier, ECE and task regressions. No public-benchmark selection.",
+  "reference": "Cache detached starting-policy log probabilities for exactly the planned training inputs and frozen candidate order; no second 27B model on GPU.",
+  "gates_before_gpu": [
+    "Test gradients and masking, reference KL zero at identical policy, detached reference, soft labels and loss scaling",
+    "Separate initialization from exact optimizer resume; both arms reset optimizer identically",
+    "Verify shared initial adapter/readout hashes and plan/data hashes",
+    "Persist full optimizer/RNG/token checkpoints via verified Drive uploads"
+  ],
+  "matilda_evidence": {
+    "pr": "https://github.com/apolinario/decision-index/pull/108",
+    "reported_public_index_v1": 60.16,
+    "reported_public_index_v1_5": 63.47,
+    "recipe_available": false,
+    "caveat": "Model card discloses benchmark-related material in earlier lineage and release selection on benchmark scores. The gain is not an isolated RL ablation or independent held-out estimate."
+  },
+  "actual_tokens_per_arm": 249855,
+  "optimizer_steps_per_arm": 35,
+  "examples_per_arm": 1108,
+  "results": "../../results/rl-decisions-v1/README.md"
+}

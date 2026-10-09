@@ -1,0 +1,412 @@
+{
+  "status": "complete",
+  "evaluation": "768 shared development cases; separate 768 calibration cases; not Decision Index scores",
+  "seed": 20261010,
+  "tokens_per_continuation_arm": 249855,
+  "steps_per_continuation_arm": 35,
+  "examples_per_continuation_arm": 1108,
+  "models": {
+    "starting_sft": {
+      "temperature": 1.0545006816343947,
+      "development": {
+        "count": 768,
+        "accuracy": 0.8684895833333334,
+        "ece": 0.02337720156225401,
+        "brier": 0.18425791078998288,
+        "nll": 0.34188452121358065,
+        "zero_probability_count": 0,
+        "soft_count": 110,
+        "soft_nll": 0.3544149562156653,
+        "soft_brier": 0.0665976365541891
+      },
+      "by_suite": {
+        "acos-quad-verification": {
+          "count": 55,
+          "accuracy": 0.9636363636363636,
+          "ece": 0.010894241134490253,
+          "brier": 0.06556775950868081,
+          "nll": 0.12580454208847971,
+          "zero_probability_count": 0
+        },
+        "acos-sentiment": {
+          "count": 55,
+          "accuracy": 0.9636363636363636,
+          "ece": 0.03895989760935871,
+          "brier": 0.04587379335115353,
+          "nll": 0.07938328500179431,
+          "zero_probability_count": 0
+        },
+        "aegis2": {
+          "count": 55,
+          "accuracy": 0.8727272727272727,
+          "ece": 0.1037579019084661,
+          "brier": 0.24240051018870087,
+          "nll": 0.44132551822430505,
+          "zero_probability_count": 0
+        },
+        "boolq": {
+          "count": 55,
+          "accuracy": 0.9454545454545454,
+          "ece": 0.06000902357235653,
+          "brier": 0.056769527827127804,
+          "nll": 0.09495823006932845,
+          "zero_probability_count": 0
+        },
+        "civil_comments": {
+          "count": 55,
+          "accuracy": 0.8727272727272727,
+          "ece": 0.10416958777884319,
+          "brier": 0.18001429647927386,
+          "nll": 0.2919738734197717,
+          "zero_probability_count": 0,
+          "soft_count": 55,
+          "soft_nll": 0.3442121758102214,
+          "soft_brier": 0.07199151177655713
+        },
+        "esci-relevance": {
+          "count": 55,
+          "accuracy": 0.6727272727272727,
+          "ece": 0.10393710657151184,
+          "brier": 0.45140601925738005,
+          "nll": 0.7769648691204964,
+          "zero_probability_count": 0
+        },
+        "massive-de-DE": {
+          "count": 55,
+          "accuracy": 0.8909090909090909,
+          "ece": 0.08250997320669284,
+          "brier": 0.12187424341283767,
+          "nll": 0.23505470235625642,
+          "zero_probability_count": 0
+        },
+        "massive-en-US": {
+          "count": 55,
+          "accuracy": 0.8909090909090909,
+          "ece": 0.06869820483625753,
+          "brier": 0.13046811779341336,
+          "nll": 0.3566742371239091,
+          "zero_probability_count": 0
+        },
+        "multinli": {
+          "count": 55,
+          "accuracy": 0.9454545454545454,
+          "ece": 0.09448142383410119,
+          "brier": 0.10681787708115524,
+          "nll": 0.2034039954061551,
+          "zero_probability_count": 0,
+          "soft_count": 55,
+          "soft_nll": 0.3646177366211092,
+          "soft_brier": 0.06120376133182106
+        },
+        "paws": {
+          "count": 55,
+          "accuracy": 0.9272727272727272,
+          "ece": 0.049755166718417176,
+          "brier": 0.08958225193661856,
+          "nll": 0.1363898902376416,
+          "zero_probability_count": 0
+        },
+        "pubmedqa": {
+          "count": 55,
+          "accuracy": 0.7636363636363637,
+          "ece": 0.12115705974615665,
+          "brier": 0.31255281898427306,
+          "nll": 0.5472980568231995,
+          "zero_probability_count": 0
+        },
+        "squad2": {
+          "count": 55,
+          "accuracy": 0.8727272727272727,
+          "ece": 0.07918089814726889,
+          "brier": 0.186378750046098,
+          "nll": 0.3048893879926387,
+          "zero_probability_count": 0
+        },
+        "verified-code": {
+          "count": 54,
+          "accuracy": 0.7407407407407407,
+          "ece": 0.11674647529586082,
+          "brier": 0.32859179809374567,
+          "nll": 0.6969065298378134,
+          "zero_probability_count": 0
+        },
+        "vitaminc-dev": {
+          "count": 54,
+          "accuracy": 0.8333333333333334,
+          "ece": 0.16594211561845656,
+          "brier": 0.2654127827217663,
+          "nll": 0.5047727286716546,
+          "zero_probability_count": 0
+        }
+      }
+    },
+    "sft": {
+      "temperature": 0.9749837267792001,
+      "development": {
+        "count": 768,
+        "accuracy": 0.8671875,
+        "ece": 0.03207150393476457,
+        "brier": 0.18297901313953033,
+        "nll": 0.3396703621701438,
+        "zero_probability_count": 0,
+        "soft_count": 110,
+        "soft_nll": 0.35195958156031726,
+        "soft_brier": 0.062315495033077845
+      },
+      "by_suite": {
+        "acos-quad-verification": {
+          "count": 55,
+          "accuracy": 0.9636363636363636,
+          "ece": 0.01837907075747749,
+          "brier": 0.06572991775392271,
+          "nll": 0.12223468399991892,
+          "zero_probability_count": 0
+        },
+        "acos-sentiment": {
+          "count": 55,
+          "accuracy": 0.9636363636363636,
+          "ece": 0.04485207045445174,
+          "brier": 0.048829174095836335,
+          "nll": 0.08504057520927646,
+          "zero_probability_count": 0
+        },
+        "aegis2": {
+          "count": 55,
+          "accuracy": 0.8727272727272727,
+          "ece": 0.07948762563697583,
+          "brier": 0.23526563847502208,
+          "nll": 0.4258994288890652,
+          "zero_probability_count": 0
+        },
+        "boolq": {
+          "count": 55,
+          "accuracy": 0.9454545454545454,
+          "ece": 0.05750071433643283,
+          "brier": 0.058121902581564744,
+          "nll": 0.0979474467701055,
+          "zero_probability_count": 0
+        },
+        "civil_comments": {
+          "count": 55,
+          "accuracy": 0.8727272727272727,
+          "ece": 0.07687961698038845,
+          "brier": 0.17502879224057538,
+          "nll": 0.2827327197508971,
+          "zero_probability_count": 0,
+          "soft_count": 55,
+          "soft_nll": 0.3356262514861828,
+          "soft_brier": 0.06632531558603043
+        },
+        "esci-relevance": {
+          "count": 55,
+          "accuracy": 0.6727272727272727,
+          "ece": 0.14103472105986709,
+          "brier": 0.4545789034825156,
+          "nll": 0.7841771914640387,
+          "zero_probability_count": 0
+        },
+        "massive-de-DE": {
+          "count": 55,
+          "accuracy": 0.8909090909090909,
+          "ece": 0.062492934321157906,
+          "brier": 0.12151968077443852,
+          "nll": 0.22812590414059947,
+          "zero_probability_count": 0
+        },
+        "massive-en-US": {
+          "count": 55,
+          "accuracy": 0.8909090909090909,
+          "ece": 0.08383071925797393,
+          "brier": 0.13108671614060483,
+          "nll": 0.36040285435791514,
+          "zero_probability_count": 0
+        },
+        "multinli": {
+          "count": 55,
+          "accuracy": 0.9454545454545454,
+          "ece": 0.12783683109421842,
+          "brier": 0.10385023304415845,
+          "nll": 0.20651864977234327,
+          "zero_probability_count": 0,
+          "soft_count": 55,
+          "soft_nll": 0.3682929116344517,
+          "soft_brier": 0.05830567448012527
+        },
+        "paws": {
+          "count": 55,
+          "accuracy": 0.9454545454545454,
+          "ece": 0.05320529150827634,
+          "brier": 0.08864762793072307,
+          "nll": 0.1438026399408247,
+          "zero_probability_count": 0
+        },
+        "pubmedqa": {
+          "count": 55,
+          "accuracy": 0.7636363636363637,
+          "ece": 0.08444625469462905,
+          "brier": 0.3125311882302712,
+          "nll": 0.5451034465576393,
+          "zero_probability_count": 0
+        },
+        "squad2": {
+          "count": 55,
+          "accuracy": 0.8727272727272727,
+          "ece": 0.08745676947160516,
+          "brier": 0.1588066443414624,
+          "nll": 0.25319160222940645,
+          "zero_probability_count": 0
+        },
+        "verified-code": {
+          "count": 54,
+          "accuracy": 0.7407407407407407,
+          "ece": 0.13767495080579137,
+          "brier": 0.3441392828186991,
+          "nll": 0.729364270649693,
+          "zero_probability_count": 0
+        },
+        "vitaminc-dev": {
+          "count": 54,
+          "accuracy": 0.7962962962962963,
+          "ece": 0.13072398667665644,
+          "brier": 0.26804736609146845,
+          "nll": 0.5008597159643577,
+          "zero_probability_count": 0
+        }
+      }
+    },
+    "rl_hybrid": {
+      "temperature": 1.2758934368477308,
+      "development": {
+        "count": 768,
+        "accuracy": 0.8619791666666666,
+        "ece": 0.04041850574402976,
+        "brier": 0.18858412868965355,
+        "nll": 0.35148086444799387,
+        "zero_probability_count": 0,
+        "soft_count": 110,
+        "soft_nll": 0.3491992542181931,
+        "soft_brier": 0.06309335698123349
+      },
+      "by_suite": {
+        "acos-quad-verification": {
+          "count": 55,
+          "accuracy": 0.9636363636363636,
+          "ece": 0.02462728566826801,
+          "brier": 0.06732692411105926,
+          "nll": 0.1300847059121278,
+          "zero_probability_count": 0
+        },
+        "acos-sentiment": {
+          "count": 55,
+          "accuracy": 0.9636363636363636,
+          "ece": 0.04060965273686599,
+          "brier": 0.04765225767643288,
+          "nll": 0.08524439195422533,
+          "zero_probability_count": 0
+        },
+        "aegis2": {
+          "count": 55,
+          "accuracy": 0.8727272727272727,
+          "ece": 0.09613205393117547,
+          "brier": 0.23528952825228583,
+          "nll": 0.43184973075484206,
+          "zero_probability_count": 0
+        },
+        "boolq": {
+          "count": 55,
+          "accuracy": 0.9454545454545454,
+          "ece": 0.062085125926266416,
+          "brier": 0.06027039590644378,
+          "nll": 0.0989082943635358,
+          "zero_probability_count": 0
+        },
+        "civil_comments": {
+          "count": 55,
+          "accuracy": 0.8545454545454545,
+          "ece": 0.09240393366659065,
+          "brier": 0.18084068553920674,
+          "nll": 0.28725022420471247,
+          "zero_probability_count": 0,
+          "soft_count": 55,
+          "soft_nll": 0.33678405923007093,
+          "soft_brier": 0.06784255757405415
+        },
+        "esci-relevance": {
+          "count": 55,
+          "accuracy": 0.6727272727272727,
+          "ece": 0.12311212811517383,
+          "brier": 0.45574367412005345,
+          "nll": 0.7889601443417699,
+          "zero_probability_count": 0
+        },
+        "massive-de-DE": {
+          "count": 55,
+          "accuracy": 0.8909090909090909,
+          "ece": 0.05917554687612948,
+          "brier": 0.12250128323714105,
+          "nll": 0.24173534980820302,
+          "zero_probability_count": 0
+        },
+        "massive-en-US": {
+          "count": 55,
+          "accuracy": 0.9090909090909091,
+          "ece": 0.08047166682718722,
+          "brier": 0.12838189652827206,
+          "nll": 0.34574545389725897,
+          "zero_probability_count": 0
+        },
+        "multinli": {
+          "count": 55,
+          "accuracy": 0.9272727272727272,
+          "ece": 0.10176419413416152,
+          "brier": 0.10320050665783925,
+          "nll": 0.1991614407600747,
+          "zero_probability_count": 0,
+          "soft_count": 55,
+          "soft_nll": 0.3616144492063152,
+          "soft_brier": 0.05834415638841284
+        },
+        "paws": {
+          "count": 55,
+          "accuracy": 0.9454545454545454,
+          "ece": 0.047808873343643594,
+          "brier": 0.09058432121255865,
+          "nll": 0.1469278281104507,
+          "zero_probability_count": 0
+        },
+        "pubmedqa": {
+          "count": 55,
+          "accuracy": 0.7636363636363637,
+          "ece": 0.16514720917418355,
+          "brier": 0.3102453404039712,
+          "nll": 0.5418311751511121,
+          "zero_probability_count": 0
+        },
+        "squad2": {
+          "count": 55,
+          "accuracy": 0.8727272727272727,
+          "ece": 0.08611649775933651,
+          "brier": 0.16560267602315468,
+          "nll": 0.265166157532592,
+          "zero_probability_count": 0
+        },
+        "verified-code": {
+          "count": 54,
+          "accuracy": 0.7037037037037037,
+          "ece": 0.1646797559022419,
+          "brier": 0.4100410607290303,
+          "nll": 0.8711176134452587,
+          "zero_probability_count": 0
+        },
+        "vitaminc-dev": {
+          "count": 54,
+          "accuracy": 0.7777777777777778,
+          "ece": 0.13705753907036378,
+          "brier": 0.2679670670837639,
+          "nll": 0.4988774712317693,
+          "zero_probability_count": 0
+        }
+      }
+    }
+  }
+}
