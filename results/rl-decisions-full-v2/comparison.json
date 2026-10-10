@@ -1,0 +1,38 @@
+{
+  "evaluation": "768 fixed development cases; separate 768-case temperature calibration; one seed; not Decision Index",
+  "starting": {
+    "accuracy": 0.8684895833333334,
+    "nll": 0.34188452121358065,
+    "brier": 0.18425791078998288,
+    "ece": 0.02337720156225401
+  },
+  "arms": {
+    "rl_hybrid": {
+      "development": {
+        "accuracy": 0.8841145833333334,
+        "nll": 0.31965183614943404,
+        "brier": 0.1693277614637573,
+        "ece": 0.02356254329849271
+      },
+      "temperature": 1.4469675592239803,
+      "training_update_seconds": 24780.83146427803,
+      "examples": 92809,
+      "tokens": 20601781,
+      "updates": 2901
+    },
+    "sft": {
+      "development": {
+        "accuracy": 0.8815104166666666,
+        "nll": 0.3245995851284031,
+        "brier": 0.16860185499654315,
+        "ece": 0.029136493228267408
+      },
+      "temperature": 0.9932901756419421,
+      "training_update_seconds": 24778.21053615396,
+      "examples": 92809,
+      "tokens": 20601781,
+      "updates": 2901
+    }
+  },
+  "interpretation": "RL has two more correct decisions than continued SFT; small mixed differences, no established generalization advantage."
+}
