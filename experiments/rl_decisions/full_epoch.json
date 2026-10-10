@@ -1,0 +1,53 @@
+{
+  "initial_artifact_sha256": "95cd355e821c0296b33490f746fe0f5d3c5fb59080cd7099e702f16e858e7272",
+  "beta": 0.05,
+  "ce_weight": 0.25,
+  "reference_cache": {
+    "identity": {
+      "plan_sha256": "bb9008fc5956f9255d8acaf0ff40169c908a91005268e77562334a789560dfb1",
+      "data_sha256": "2b1fec4f377c3e94f4f8e6c757a79d42152a73bca254bd34bd11591e75b95527",
+      "initial_artifact_sha256": "95cd355e821c0296b33490f746fe0f5d3c5fb59080cd7099e702f16e858e7272",
+      "max_length": 512
+    },
+    "sha256": "17db3af1a7de1c64efa7991e4643640eabfa6b1d87394f733b0420996b6f8fb8",
+    "rows": 92809
+  },
+  "format_version": 1,
+  "architecture": "autojev-readout+lora",
+  "base_model": "Qwen/Qwen3.8-27B",
+  "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "lora_rank": 16,
+  "lora_alpha": 32,
+  "lora_dropout": 0.05,
+  "max_length": 512,
+  "micro_batch": 4,
+  "grad_accum": 8,
+  "seed": 20261010,
+  "attention_mode": "noncausal_full_attention",
+  "pooling": "last",
+  "data_sha256": {
+    "train": "2b1fec4f377c3e94f4f8e6c757a79d42152a73bca254bd34bd11591e75b95527",
+    "development": "70c99179725a3e30605c24a89108309ee54f0a7ad4e4fbcc2fd25a16c28f56cf",
+    "temperature": "89dff519e55a4da1f5645e9b74d47b9fbde53eba73f9d5e28928e97d706d0382"
+  },
+  "lr": 1e-05,
+  "total_steps": 2901,
+  "token_budget": 20601781,
+  "planned_tokens": 20601781,
+  "plan_sha256": "bb9008fc5956f9255d8acaf0ff40169c908a91005268e77562334a789560dfb1",
+  "full_epoch": true,
+  "eval_every": 500,
+  "sampling": "single seeded shuffle; fixed option order; stop before token budget",
+  "lr_schedule": "5% token warmup then linear decay",
+  "train_rows_available": 92809,
+  "dev_rows": 768,
+  "temperature_rows": 768,
+  "trainable_parameters": 80997376,
+  "status": "complete",
+  "arms": [
+    "rl_hybrid",
+    "sft"
+  ],
+  "results": "../../results/rl-decisions-full-v2/README.md",
+  "save_every": 100
+}

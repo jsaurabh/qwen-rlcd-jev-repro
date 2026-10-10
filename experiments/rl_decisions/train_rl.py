@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Train an AutoJev-style Qwen LoRA with a dedicated 255-way readout.
 
-Use the explicit matched-pilot commands in README.md. Checkpoints include
+Use the explicit pilot or full-epoch commands in README.md. Checkpoints include
 optimizer and RNG state for resume; initialization alone resets the optimizer.
 """
 from __future__ import annotations
@@ -124,6 +124,10 @@ def save_artifact(model, out, temperature, config, optimizer=None, sampler_rng=N
         raise FileExistsError(f"Refusing to overwrite checkpoint: {destination}")
     out = destination.with_name(f".{destination.name}.partial-{os.getpid()}")
     out.mkdir(parents=True, exist_ok=False)
+    import shutil
+    for name in ["run_config.json", "training.jsonl", "evaluation.jsonl"]:
+        if (destination.parent / name).exists():
+            shutil.copyfile(destination.parent / name, out / name)
     model.backbone.save_pretrained(out / "adapter")
     save_file({"weight": model.readout.weight.detach().cpu().contiguous()}, out / "readout.safetensors")
     model.processor.save_pretrained(out / "processor")
@@ -163,6 +167,8 @@ def main():
     ap.add_argument("--revision", default=REVISION)
     ap.add_argument("--out", type=Path, default=Path("/content/drive/MyDrive/qwen-rlcd-jev/autojev-27b/reproduction"))
     ap.add_argument("--checkpoint-spool", type=Path)
+    ap.add_argument("--full-epoch", action="store_true", help="Use each eligible training example exactly once")
+    ap.add_argument("--eval-every", type=int, default=0)
     ap.add_argument("--token-budget", type=int, default=2000000)
     ap.add_argument("--steps", type=int, default=1533)
     ap.add_argument("--start-step", type=int, default=0)
@@ -203,8 +209,8 @@ def main():
             if not args.out.resolve().is_relative_to(Path("/content/drive/MyDrive").resolve()):
                 raise ValueError("--require-drive requires an output directory on Google Drive")
     check_storage()
-    if args.steps <= args.start_step or min(args.micro_batch, args.grad_accum, args.eval_rows) < 1:
-        raise ValueError("Require positive batch/eval sizes and steps > start-step")
+    if args.start_step < 0 or min(args.micro_batch, args.grad_accum, args.eval_rows) < 1:
+        raise ValueError("Require positive batch/eval sizes and nonnegative start-step")
     args.out.mkdir(parents=True, exist_ok=True)
     random.seed(args.seed); torch.manual_seed(args.seed)
     train_path = Path(args.train_file) if Path(args.train_file).is_absolute() else args.data / args.train_file
@@ -235,6 +241,8 @@ def main():
     if args.resume_artifact:
         for key,value in {'initial_artifact_sha256':initial_hash,'objective':args.objective,'beta':args.beta,'ce_weight':args.ce_weight}.items():
             if saved_config.get(key)!=value:raise ValueError(f'Resume mismatch: {key}')
+    if args.full_epoch:
+        args.token_budget = sum(row["input_token_count"] for row in train)
     rng = random.Random(args.seed)
     plan, planned_tokens = make_plan(train, args.token_budget, args.seed)
     update_plan = list(updates(plan, args.micro_batch, args.grad_accum))
@@ -287,6 +295,7 @@ def main():
         "attention_mode": args.attention_mode, "pooling": "last",
         "data_sha256": data_hashes, "lr": args.lr, "total_steps": args.steps,
         "token_budget": args.token_budget, "planned_tokens": planned_tokens, "plan_sha256": plan_hash,
+        "full_epoch": args.full_epoch, "eval_every": args.eval_every,
         "sampling": "single seeded shuffle; fixed option order; stop before token budget",
         "lr_schedule": "5% token warmup then linear decay",
         "train_rows_available": len(train), "dev_rows": len(dev), "temperature_rows": len(calibration),
@@ -356,6 +365,20 @@ def main():
         log.append(entry); print(json.dumps(entry), flush=True)
         with (args.out / "training.jsonl").open("a") as stream:
             stream.write(json.dumps(entry) + "\n")
+        if args.eval_every and (step % args.eval_every == 0 or step == args.steps):
+            # Preserve training randomness across diagnostic evaluation.
+            py_state = random.getstate()
+            try:
+                with torch.random.fork_rng():
+                    temp, diagnostic = evaluate(model, dev, calibration, args.micro_batch, args.max_length)
+            finally:
+                random.setstate(py_state)
+                model.train()
+            milestone = {"step": step, "tokens_seen": tokens_seen, "temperature": temp, "development": diagnostic}
+            with (args.out / "evaluation.jsonl").open("a") as stream:
+                stream.write(json.dumps(milestone) + "\n")
+            print(json.dumps({"phase": "evaluation", "step": step, "temperature": temp,
+                **{key: diagnostic[key] for key in ["accuracy", "nll", "brier", "ece"]}}), flush=True)
         if args.save_every and (step == 1 or step % args.save_every == 0 or step == args.steps):
             check_storage()
             save_artifact(model, args.out / f"checkpoint-{step:05d}", 1.0,

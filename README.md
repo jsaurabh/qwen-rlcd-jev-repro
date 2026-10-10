@@ -121,3 +121,5 @@ See [REPRODUCING.md](REPRODUCING.md) for exact commands and [THIRD_PARTY.md](THI
 ## License
 
 Original code and synthetic data in this repository are MIT licensed. Third-party code, models, and benchmarks retain their own licenses.
+
+The [full-epoch RL comparison](results/rl-decisions-full-v2/README.md) completes 2,901 updates per arm: 88.41% development accuracy for RL versus 88.15% for matched continued SFT (86.85% initially). The small, mixed differences do not establish an RL advantage. Exact commands, complete training logs and task breakdowns are included.
