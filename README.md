@@ -31,6 +31,8 @@ Training/public-benchmark overlap has not been fully audited. The [completed dat
 
 A subsequent [matched RL continuation pilot](results/rl-decisions-v1/README.md) did **not** improve the expanded-data checkpoint: 86.20% accuracy for RL, 86.72% for continued SFT, and 86.85% before continuation. Code, configurations and the negative result are preserved for reproduction.
 
+A completed [outcome-based online RL pilot](results/online-rl-alfworld-v3/README.md) uses real ALFWorld interaction and terminal-success rewards: seen-environment success rose from 17/24 to 21/24, unseen from 14/24 to 15/24, while classification accuracy moved from 88.15% to 87.89%. These are small feasibility samples, not a Decision Index result. [Reproduction code](experiments/online_rl_alfworld/README.md).
+
 ## Talk deck
 
 The accompanying 21-slide technical overview is available at [`slides/jev_decision_models_balanced_technical_talk_v8.pptx`](slides/jev_decision_models_balanced_technical_talk_v8.pptx). It covers the Jev execution model, open architecture families, training and calibration, and the public benchmark results summarized below.
