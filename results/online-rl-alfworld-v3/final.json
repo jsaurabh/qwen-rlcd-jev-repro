@@ -1,0 +1,218 @@
+{
+  "updates": 64,
+  "stop_reason": "update_budget",
+  "training_wall_seconds": 19891.545061070003,
+  "valid_seen": {
+    "overall": {
+      "episodes": 24,
+      "success_rate": 0.875,
+      "mean_steps": 19.833333333333332,
+      "mean_return": 0.8353333333333333
+    },
+    "by_type": {
+      "look_at_obj_in_light": {
+        "episodes": 4,
+        "success_rate": 0.75,
+        "mean_steps": 21.0,
+        "mean_return": 0.708
+      },
+      "pick_and_place_simple": {
+        "episodes": 4,
+        "success_rate": 1.0,
+        "mean_steps": 10.25,
+        "mean_return": 0.9795
+      },
+      "pick_clean_then_place_in_recep": {
+        "episodes": 4,
+        "success_rate": 1.0,
+        "mean_steps": 23.25,
+        "mean_return": 0.9535
+      },
+      "pick_cool_then_place_in_recep": {
+        "episodes": 4,
+        "success_rate": 1.0,
+        "mean_steps": 18.25,
+        "mean_return": 0.9635
+      },
+      "pick_heat_then_place_in_recep": {
+        "episodes": 4,
+        "success_rate": 0.5,
+        "mean_steps": 37.5,
+        "mean_return": 0.425
+      },
+      "pick_two_obj_and_place": {
+        "episodes": 4,
+        "success_rate": 1.0,
+        "mean_steps": 8.75,
+        "mean_return": 0.9824999999999999
+      }
+    }
+  },
+  "valid_unseen": {
+    "overall": {
+      "episodes": 24,
+      "success_rate": 0.625,
+      "mean_steps": 24.625,
+      "mean_return": 0.57575
+    },
+    "by_type": {
+      "look_at_obj_in_light": {
+        "episodes": 4,
+        "success_rate": 1.0,
+        "mean_steps": 10.5,
+        "mean_return": 0.979
+      },
+      "pick_and_place_simple": {
+        "episodes": 4,
+        "success_rate": 0.75,
+        "mean_steps": 20.25,
+        "mean_return": 0.7095
+      },
+      "pick_clean_then_place_in_recep": {
+        "episodes": 4,
+        "success_rate": 0.25,
+        "mean_steps": 40.25,
+        "mean_return": 0.16949999999999998
+      },
+      "pick_cool_then_place_in_recep": {
+        "episodes": 4,
+        "success_rate": 0.75,
+        "mean_steps": 17.75,
+        "mean_return": 0.7145
+      },
+      "pick_heat_then_place_in_recep": {
+        "episodes": 4,
+        "success_rate": 0.5,
+        "mean_steps": 30.0,
+        "mean_return": 0.44
+      },
+      "pick_two_obj_and_place": {
+        "episodes": 4,
+        "success_rate": 0.5,
+        "mean_steps": 29.0,
+        "mean_return": 0.442
+      }
+    }
+  },
+  "retention": {
+    "temperature": 1.0124315897738363,
+    "metrics": {
+      "count": 768,
+      "accuracy": 0.87890625,
+      "ece": 0.023612413709916343,
+      "brier": 0.1695431817910985,
+      "nll": 0.3242675968825376,
+      "reliability": [
+        {
+          "lower": 0.0,
+          "upper": 0.06666666666666667,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.06666666666666667,
+          "upper": 0.13333333333333333,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.13333333333333333,
+          "upper": 0.2,
+          "count": 0,
+          "confidence": null,
+          "accuracy": null
+        },
+        {
+          "lower": 0.2,
+          "upper": 0.26666666666666666,
+          "count": 1,
+          "confidence": 0.21556188838748672,
+          "accuracy": 0.0
+        },
+        {
+          "lower": 0.26666666666666666,
+          "upper": 0.3333333333333333,
+          "count": 2,
+          "confidence": 0.32357102175014185,
+          "accuracy": 0.0
+        },
+        {
+          "lower": 0.3333333333333333,
+          "upper": 0.4,
+          "count": 1,
+          "confidence": 0.34757970265950167,
+          "accuracy": 0.0
+        },
+        {
+          "lower": 0.4,
+          "upper": 0.4666666666666667,
+          "count": 12,
+          "confidence": 0.42823998115386047,
+          "accuracy": 0.25
+        },
+        {
+          "lower": 0.4666666666666667,
+          "upper": 0.5333333333333333,
+          "count": 18,
+          "confidence": 0.5020953835444514,
+          "accuracy": 0.5
+        },
+        {
+          "lower": 0.5333333333333333,
+          "upper": 0.6,
+          "count": 21,
+          "confidence": 0.5642896197542816,
+          "accuracy": 0.5714285714285714
+        },
+        {
+          "lower": 0.6,
+          "upper": 0.6666666666666666,
+          "count": 24,
+          "confidence": 0.6332017192539329,
+          "accuracy": 0.4583333333333333
+        },
+        {
+          "lower": 0.6666666666666666,
+          "upper": 0.7333333333333333,
+          "count": 35,
+          "confidence": 0.7059791700488215,
+          "accuracy": 0.6857142857142857
+        },
+        {
+          "lower": 0.7333333333333333,
+          "upper": 0.8,
+          "count": 31,
+          "confidence": 0.7706513752382832,
+          "accuracy": 0.6774193548387096
+        },
+        {
+          "lower": 0.8,
+          "upper": 0.8666666666666667,
+          "count": 43,
+          "confidence": 0.8345676930340075,
+          "accuracy": 0.813953488372093
+        },
+        {
+          "lower": 0.8666666666666667,
+          "upper": 0.9333333333333333,
+          "count": 67,
+          "confidence": 0.9039601713275878,
+          "accuracy": 0.8656716417910447
+        },
+        {
+          "lower": 0.9333333333333333,
+          "upper": 1.0,
+          "count": 513,
+          "confidence": 0.9850867218445639,
+          "accuracy": 0.9785575048732943
+        }
+      ],
+      "zero_probability_count": 0,
+      "soft_count": 110,
+      "soft_nll": 0.3451902778647171,
+      "soft_brier": 0.052140964887832535
+    }
+  }
+}

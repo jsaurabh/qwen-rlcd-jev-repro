@@ -11,3 +11,5 @@ These are compact outputs from the three published experiment tracks:
 Weights and optimizer state are intentionally absent. The scripts regenerate them and write large artifacts to local storage or Google Drive.
 
 Metrics are conditional on each listed dataset. Several datasets are synthetic or template-derived, so compare models only within the same report and protocol.
+
+- [Online ALFWorld RL](online-rl-alfworld-v3/README.md): 64 updates with environment outcome rewards, paired task success and classification retention.
